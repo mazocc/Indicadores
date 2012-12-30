@@ -1,10 +1,9 @@
 package models;
 
+import formatadores.Formatador;
 import play.db.jpa.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -16,7 +15,8 @@ public class Indicador extends Model {
     @NotNull
     public String iniciativa;
 
-    //public Formato formato;
+    @Enumerated(EnumType.STRING)
+    public Formato formato;
     //public List<Responsavel> responsaveis;
     //public ForcaTarefa forcaTarefa;
 
