@@ -1,6 +1,5 @@
 package models;
 
-import formatadores.Formatador;
 import play.db.jpa.Model;
 
 import javax.persistence.*;

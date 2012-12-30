@@ -1,16 +1,11 @@
 package formatadores;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Monetario<T> implements Formatador<Number> {
+class Monetario<T> implements Formatador<Number> {
     @Override
     public String formatar(Number value) {
-        DecimalFormat formato = new DecimalFormat();
-        formato.setDecimalFormatSymbols(new DecimalFormatSymbols(Locale.getDefault()));
-        return formato.format(value);
+        return NumberFormat.getCurrencyInstance(Locale.getDefault()).format(value);
     }
 }

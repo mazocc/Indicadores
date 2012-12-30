@@ -1,5 +1,5 @@
 package formatadores;
 
-public interface Formatador<T> {
+interface Formatador<T> {
     public String formatar(T value);
 }
