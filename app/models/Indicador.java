@@ -1,30 +1,38 @@
 package models;
 
+import formatadores.Formato;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 public class Indicador extends Model {
 
-    @NotNull
+    @Required
     public String descricao;
 
-    @NotNull
+    @Required
     public String iniciativa;
 
     @Enumerated(EnumType.STRING)
     public Formato formato;
-    //public List<Responsavel> responsaveis;
-    //public ForcaTarefa forcaTarefa;
+
+    @ManyToMany
+    public List<Pessoa> responsaveis;
+
+    public ForcaTarefa forcaTarefa;
 
     @ManyToOne
     @JoinColumn(name = "meta_id", nullable = false)
     public Meta meta;
 
-    //public Periodicidade periodicidade;
-    //public List<RegistroIndicador> registros;
+    @Enumerated(EnumType.STRING)
+    public Periodicidade periodicidade;
+
+    @OneToMany(mappedBy = "indicador")
+    public List<RegistroIndicador> registros;
 
     @ManyToOne
     @JoinColumn(name = "objetivo_id", nullable = false)

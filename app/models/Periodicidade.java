@@ -1,6 +1,7 @@
 package models;
 
-import play.db.jpa.Model;
-
-public class Periodicidade extends Model {
+public enum Periodicidade {
+    Diario,
+    Mensal,
+    Anual
 }
