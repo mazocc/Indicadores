@@ -1,5 +1,6 @@
-package controllers;
+package controllers.automatic.crud;
 
+import controllers.CRUD;
 import models.Perspectiva;
 
 @CRUD.For(Perspectiva.class)

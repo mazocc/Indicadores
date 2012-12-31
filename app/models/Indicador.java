@@ -22,6 +22,8 @@ public class Indicador extends Model {
     @ManyToMany
     public List<Pessoa> responsaveis;
 
+    @ManyToOne
+    @JoinColumn(name = "forca_tarefa_id")
     public ForcaTarefa forcaTarefa;
 
     @ManyToOne

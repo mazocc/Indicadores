@@ -1,16 +1,18 @@
 package models;
 
+import play.data.validation.MinSize;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
 public class Perspectiva extends Model {
 
-    @NotNull
+    @Required
+    @MinSize(4)
     public String descricao;
 
     @OneToMany(mappedBy = "perspectiva")
