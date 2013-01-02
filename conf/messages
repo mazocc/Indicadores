@@ -2,4 +2,16 @@
 # For example, for French create a messages.fr file
 #
 
-descricao=Decri\u00E7\u00E3o
+descricao=Descri\u00E7\u00E3o
+janeiro=Janeiro
+fevereiro=Fevereiro
+marco=Mar\u00E7o
+abril=Abril
+maio=Maio
+junho=Junho
+julho=Julho
+agosto=Agosto
+setembro=Setembro
+outubro=Outubro
+novembro=Novembro
+dezembro=Dezembro

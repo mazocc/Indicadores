@@ -10,12 +10,12 @@ import java.util.List;
 @Entity
 public class Meta extends Model {
 
-    @NotNull
-    public String descricao;
+  @NotNull
+  public String descricao;
 
-    @OneToMany(mappedBy = "meta")
-    public List<Indicador> indicadores;
+  @OneToMany(mappedBy = "meta")
+  public List<Indicador> indicadores;
 
-    //public Formato formato;
-    //public List<ValorAnual> valoresAnuais;
+  @OneToMany(mappedBy = "meta")
+  public List<ValorAnual> valoresAnuais;
 }

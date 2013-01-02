@@ -1,5 +1,12 @@
 package models;
 
-public class ValorAnual {
+import play.db.jpa.Model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class ValorAnual extends Model {
+
+  public Meta meta;
 
 }
