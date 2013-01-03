@@ -1,0 +1,17 @@
+#{extends 'main.html'/}
+#{set title: 'Perspectivas'/}
+
+<table>
+  <thead>
+  <tr>
+    <th>&{'descricao'}</th>
+  </tr>
+  </thead>
+  <tbody>
+  #{list perspectivas}
+  <tr>
+    <td>${_.descricao}</td>
+  </tr>
+  #{/list}
+  </tbody>
+</table>

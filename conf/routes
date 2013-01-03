@@ -3,7 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+GET     /                                       Perspectivas.index
+
+# Perspectivas
+GET /perspectivas Perspectivas.index
 
 # Crud Module
 *       /admin                                  module:crud
