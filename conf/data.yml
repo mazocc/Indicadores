@@ -1,7 +1,60 @@
 # Perspectivas
 
-models.Perspectiva(primeira-perspectiva):
-    descricao: Perspectiva de Teste
+models.Perspectiva(perspectiva_um):
+  descricao: Perspectiva de Teste
 
-models.Perspectiva(segunda-perspectiva):
-    descricao: Testando Descrição
+
+models.Objetivo(objetivo_um):
+  descricao: Primeiro Objetivo
+  perspectiva: perspectiva_um
+
+models.Meta(meta_um):
+  descricao: Primeira Meta
+
+models.ValorAnual(valor_um):
+  meta: meta_um
+  valor: 1
+  ano: 2010
+
+models.ValorAnual(valor_dois):
+  meta: meta_um
+  valor: 2
+  ano: 2011
+
+models.ValorAnual(valor_tres):
+  meta: meta_um
+  valor: 3
+  ano: 2012
+
+models.ValorAnual(valor_quatro):
+  meta: meta_um
+  valor: 4
+  ano: 2013
+
+models.Pessoa(pessoa_um):
+  nome: Pessoa de Teste
+
+models.ForcaTarefa(forca_um):
+  pessoas:
+    - pessoa_um
+
+models.Indicador(indicador_um):
+  descricao: Indicador de Teste
+  iniciativa: Iniciativa de Teste
+  formato: Inteiro
+  responsaveis:
+    - pessoa_um
+  forcaTarefa: forca_um
+  meta: meta_um
+  periodicidade: Mensal
+  objetivo: objetivo_um
+  registros:
+    - registro_um
+
+models.RegistroIndicador(registro_um):
+  data: 2013-01-01
+  indicador: indicador_um
+  valor: 3
+
+
+

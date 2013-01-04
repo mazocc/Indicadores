@@ -4,5 +4,5 @@ import controllers.CRUD;
 import models.Meta;
 
 @CRUD.For(Meta.class)
-public class AdminMeta extends CRUD {
+public class AdminMetas extends CRUD {
 }

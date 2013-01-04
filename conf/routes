@@ -8,6 +8,9 @@ GET     /                                       Perspectivas.index
 # Perspectivas
 GET /perspectivas Perspectivas.index
 
+# Indicadores
+GET /indicadores/visualizar/{id}  Indicadores.visualizar
+
 # Crud Module
 *       /admin                                  module:crud
 
