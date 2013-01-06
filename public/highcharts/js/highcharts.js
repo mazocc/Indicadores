@@ -2005,14 +2005,14 @@
             a.setState("hover");
             t.css(b.options.itemHoverStyle)
         }).on("mouseout",function () {
-            t.css(a.visible ? i : j);
-            a.setState()
-        }).on("click", function (b) {
-            var c = function () {
-                a.setVisible()
-            }, b = {browserEvent:b};
-            a.firePointEvent ? a.firePointEvent("legendItemClick", b, c) : F(a, "legendItemClick", b, c)
-        }), b.colorizeItem(a, a.visible), u && v))a.checkbox = T("input", {type:"checkbox", checked:a.selected, defaultChecked:a.selected}, e.itemCheckboxStyle, c.container),
+                t.css(a.visible ? i : j);
+                a.setState()
+            }).on("click", function (b) {
+                var c = function () {
+                    a.setVisible()
+                }, b = {browserEvent:b};
+                a.firePointEvent ? a.firePointEvent("legendItemClick", b, c) : F(a, "legendItemClick", b, c)
+            }), b.colorizeItem(a, a.visible), u && v))a.checkbox = T("input", {type:"checkbox", checked:a.selected, defaultChecked:a.selected}, e.itemCheckboxStyle, c.container),
             J(a.checkbox, "click", function (b) {
                 F(a, "checkboxClick", {checked:b.target.checked}, function () {
                     a.select()
@@ -2237,7 +2237,7 @@
         this.resetZoomButton = a.renderer.button(b.resetZoom, null, null,function () {
             a.zoomOut()
         }, d, e && e.hover).attr({align:c.position.align,
-            title:b.resetZoomTitle}).add().align(c.position, !1, a[f]);
+                title:b.resetZoomTitle}).add().align(c.position, !1, a[f]);
         this.resetZoomButton.alignTo = f
     }, zoomOut:function () {
         var a = this, b = a.resetZoomButton;
