@@ -1,14 +1,26 @@
 package models;
 
+import play.data.validation.Email;
+import play.data.validation.Password;
+import play.data.validation.Required;
+import play.data.validation.Unique;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
 
 @Entity
 public class Pessoa extends Model {
 
-    @NotNull
-    public String nome;
+  @Required
+  public String nome;
+
+  @Email
+  @Required
+  @Unique
+  public String email;
+
+  @Required
+  @Password
+  public String senha;
 
 }

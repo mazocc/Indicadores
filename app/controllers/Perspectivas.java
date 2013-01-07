@@ -3,9 +3,11 @@ package controllers;
 import models.Perspectiva;
 import play.data.validation.Valid;
 import play.mvc.Controller;
+import play.mvc.With;
 
 import java.util.List;
 
+@With(Secure.class)
 public class Perspectivas extends Controller {
 
   public static void index() {

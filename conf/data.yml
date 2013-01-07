@@ -31,19 +31,21 @@ models.ValorAnual(valor_quatro):
   valor: 4
   ano: 2013
 
-models.Pessoa(pessoa_um):
-  nome: Pessoa de Teste
+models.Pessoa(administrador):
+  nome: Administrador
+  email: dragoonkiller@gmail.com
+  senha: 28091990
 
 models.ForcaTarefa(forca_um):
   pessoas:
-    - pessoa_um
+    - administrador
 
 models.Indicador(indicador_um):
   descricao: Indicador de Teste
   iniciativa: Iniciativa de Teste
   formato: Inteiro
   responsaveis:
-    - pessoa_um
+    - administrador
   forcaTarefa: forca_um
   meta: meta_um
   periodicidade: Mensal

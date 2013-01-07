@@ -1,8 +1,6 @@
 require:
     - play
     - play -> crud
+    - play -> secure
     - play -> chronostamp 0.1
-    - play -> fastergt 1.7
-    - play -> guice 1.2
-    - play -> less 0.9.1
     - net.sf.flexjson -> flexjson 2.1

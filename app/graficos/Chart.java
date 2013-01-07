@@ -1,4 +1,4 @@
-package models;
+package graficos;
 
 public class Chart {
 }
