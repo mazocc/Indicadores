@@ -4,12 +4,13 @@
     <title>#{get 'title' /}</title>
     <meta charset="${_response_encoding}">
     <link type="text/css" rel="stylesheet" href="@{'/public/bootstrap/css/bootstrap.min.css'}"/>
-#{get 'more-styles' /}
+    <link type="text/css" rel="stylesheet" href="@{'/public/stylesheets/main.css'}"/>
+#{get 'moreStyles' /}
     <script type="text/javascript" src="@{'/public/javascripts/jquery-1.8.3.min.js'}"></script>
     <script type="text/javascript" src="@{'/public/bootstrap/js/bootstrap.min.js'}"></script>
     <script type="text/javascript" src="@{'/public/highcharts/js/highcharts.js'}"></script>
     <script type="text/javascript" src="@{'/public/highcharts/js/themes/gray.js'}"></script>
-#{get 'more-scripts' /}
+#{get 'moreScripts' /}
     <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
 </head>
 <body>
@@ -17,6 +18,7 @@
 
     <div id="header" class="row">
     #{cabecalho /}
+        #{loginInfo /}
     </div>
 
     <div id="content">

@@ -15,14 +15,31 @@ public class Perspectivas extends Controller {
     render(perspectivas);
   }
 
-  public static void form(Long id) {
-    if (id == null) {
-      render();
-    }
+  public static void cadastroPerspectiva() {
+    render();
+  }
+
+  public static void visualizar(Long id) {
     Perspectiva perspectiva = Perspectiva.findById(id);
     render(perspectiva);
   }
 
-  public static void save(@Valid Perspectiva perspectiva) {
+  public static void editar(Long id) {
+    Perspectiva perspectiva = Perspectiva.findById(id);
+    render("@cadastroPerspectiva", perspectiva);
+  }
+
+  public static void apagar(Long id) {
+    Perspectiva perspectiva = Perspectiva.findById(id);
+    perspectiva.delete();
+    Perspectivas.index();
+  }
+
+  public static void salvar(@Valid Perspectiva perspectiva) {
+    if (validation.hasErrors()) {
+      render("@cadastroPerspectiva", perspectiva);
+    }
+    perspectiva.save();
+    Perspectivas.index();
   }
 }

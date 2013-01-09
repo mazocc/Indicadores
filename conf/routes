@@ -1,11 +1,22 @@
-*   /   module:secure
-*   /admin    module:crud
+# Modulos
+*       /                                 module:secure
+*       /admin                            module:crud
 
-GET     /                                       Perspectivas.index
-GET /perspectivas Perspectivas.index
-GET /indicadores/visualizar/{id}  Indicadores.visualizar
+# Index
+GET     /                                 Index.index
+
+# Perspectivas
+GET     /perspectivas                     Perspectivas.index
+GET     /perspectivas/{id}                Perspectivas.visualizar
+GET     /perspectivas/nova                Perspectivas.cadastroPerspectiva
+GET     /perspectivas/{id}/editar         Perspectivas.editar
+PUT     /perspectivas/salvar              Perspectivas.salvar
+POST    /perspectivas/atualizar           Perspectivas.atualizar
+DELETE  /perspectivas/{id}/apagar         Perspectivas.apagar
+
 
 GET     /favicon.ico                            404
 GET     /public/                                staticDir:public
+
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
