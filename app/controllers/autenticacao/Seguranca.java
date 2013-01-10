@@ -11,7 +11,7 @@ public class Seguranca extends Secure.Security {
     return pessoa != null && pessoa.senha.equals(password);
   }
 
-  static Pessoa getPessoa() {
+  static Pessoa getAuthenticatedUser() {
     return Pessoa.find("byEmail", session.get("username")).first();
   }
 }

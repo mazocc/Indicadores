@@ -36,3 +36,7 @@ validation.minSize=S\u00E3o necess\u00E1rios pelo menos %2$d caracteres
 erro=Erro
 erro.verificar=Por favor, verifique os campos marcados...
 acoes=A\u00E7\u00F5es
+empresa=Ximango
+empresa_url=http\://www.ximango.com.br
+ola=Ol\u00E1
+encerrar_sessao=Encerrar sua sess\u00E3o do sistema

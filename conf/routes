@@ -10,9 +10,8 @@ GET     /perspectivas                     Perspectivas.index
 GET     /perspectivas/{id}                Perspectivas.visualizar
 GET     /perspectivas/nova                Perspectivas.cadastroPerspectiva
 GET     /perspectivas/{id}/editar         Perspectivas.editar
-PUT     /perspectivas/salvar              Perspectivas.salvar
-POST    /perspectivas/atualizar           Perspectivas.atualizar
-DELETE  /perspectivas/{id}/apagar         Perspectivas.apagar
+POST    /perspectivas/salvar              Perspectivas.salvar
+DELETE  /perspectivas/{id}                Perspectivas.apagar
 
 
 GET     /favicon.ico                            404

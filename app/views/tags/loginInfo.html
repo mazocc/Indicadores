@@ -1,1 +1,4 @@
-${controllers.autenticacao.Seguranca.getPessoa().nome}
+<p class="loginInfo">
+&{'ola'} ${controllers.autenticacao.Seguranca.getAuthenticatedUser()?.nome}
+    <a id="logout" href="@{Secure?.logout()}" class="icon-off verticalAlignSub"></a>
+</p>

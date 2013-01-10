@@ -4,30 +4,41 @@
     <title>#{get 'title' /}</title>
     <meta charset="${_response_encoding}">
     <link type="text/css" rel="stylesheet" href="@{'/public/bootstrap/css/bootstrap.min.css'}"/>
-    <link type="text/css" rel="stylesheet" href="@{'/public/stylesheets/main.css'}"/>
+    <link type="text/css" rel="stylesheet" href="@{'/public/stylesheets/main.less'}"/>
 #{get 'moreStyles' /}
-    <script type="text/javascript" src="@{'/public/javascripts/jquery-1.8.3.min.js'}"></script>
-    <script type="text/javascript" src="@{'/public/bootstrap/js/bootstrap.min.js'}"></script>
-    <script type="text/javascript" src="@{'/public/highcharts/js/highcharts.js'}"></script>
-    <script type="text/javascript" src="@{'/public/highcharts/js/themes/gray.js'}"></script>
-#{get 'moreScripts' /}
     <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
 </head>
 <body>
-<div class="container">
+<div class="wrapper">
+    <div class="container">
 
-    <div id="header" class="row">
-    #{cabecalho /}
-        #{loginInfo /}
-    </div>
+        <div class="header row">
+        #{cabecalho /}
+        </div>
 
-    <div id="content">
-    #{doLayout /}
-    </div>
+        <div class="content">
+        #{mensagens /}
+        #{doLayout /}
+        </div>
 
-    <div id="footer">
-    #{rodape /}
+        <div class="push"></div>
     </div>
 </div>
+<div class="footer">
+#{rodape /}
+</div>
+
+<script type="text/javascript" src="@{'/public/javascripts/jquery-1.8.3.min.js'}"></script>
+<script type="text/javascript" src="@{'/public/bootstrap/js/bootstrap.min.js'}"></script>
+<script type="text/javascript" src="@{'/public/highcharts/js/highcharts.js'}"></script>
+<script type="text/javascript" src="@{'/public/highcharts/js/themes/gray.js'}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($("[rel=tooltip]").length) {
+            $("[rel=tooltip]").tooltip();
+        }
+    });
+</script>
+#{get 'moreScripts' /}
 </body>
 </html>

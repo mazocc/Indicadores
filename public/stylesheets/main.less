@@ -1,0 +1,50 @@
+@templateDefaultWidth: 960px;
+@footerHeight: 30px;
+
+@smallFont: 11px;
+@normalFont: 14px;
+
+.verticalAlignSuper {
+  vertical-align: super;
+}
+
+.verticalAlignSub {
+  vertical-align: sub;
+}
+
+.loginInfo {
+  font-size: @smallFont;
+  line-height: @footerHeight;
+  margin: 0px;
+}
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto (-@footerHeight); /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer {
+  background-color: #f2f2f2;
+  padding: 0 20px 0 20px;
+}
+
+.footer, .push {
+  height: @footerHeight; /* .push must be the same height as .footer */
+}
+

@@ -2,5 +2,6 @@ require:
     - play
     - play -> crud
     - play -> secure
+    - play -> less 0.9.1
     - play -> chronostamp 0.1
     - net.sf.flexjson -> flexjson 2.1

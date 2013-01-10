@@ -1,22 +1,28 @@
-<ul class="nav nav-pills" xmlns="http://www.w3.org/1999/html">
-    <li>#{a @Index.index()}&{'home'}#{/a}</li>
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">&{'gerenciamento'} <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li><a href="#">&{'indicadores'}</a></li>
-            <li><a href="#">&{'metas'}</a></li>
-            <li>#{a @Perspectivas.index()}&{'perspectivas'}#{/a}</li>
-            <li><a href="#">&{'objetivos'}</a></li>
-            <li><a href="#">&{'pessoas'}</a></li>
-            <li><a href="#">&{'forcas.tarefa'}</a></li>
-            <li><a href="#">&{'adicionar.valores.as.metas'}</a></li>
-            <li><a href="#">&{'adicionar.valores.aos.indicadores'}</a></li>
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="&{'empresa_url'}" target="_blank">&{'empresa'}</a>
+        <ul class="nav nav-pills" xmlns="http://www.w3.org/1999/html">
+            <li>#{a @Index.index()}&{'home'}#{/a}</li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">&{'gerenciamento'} <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">&{'indicadores'}</a></li>
+                    <li><a href="#">&{'metas'}</a></li>
+                    <li>#{a @Perspectivas.index()}&{'perspectivas'}#{/a}</li>
+                    <li><a href="#">&{'objetivos'}</a></li>
+                    <li><a href="#">&{'pessoas'}</a></li>
+                    <li><a href="#">&{'forcas.tarefa'}</a></li>
+                    <li><a href="#">&{'adicionar.valores.as.metas'}</a></li>
+                    <li><a href="#">&{'adicionar.valores.aos.indicadores'}</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">&{'ajuda'} <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">&{'sobre'}</a></li>
+                </ul>
+            </li>
         </ul>
-    </li>
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">&{'ajuda'} <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li><a href="#">&{'sobre'}</a></li>
-        </ul>
-    </li>
-</ul>
+    </div>
+</div>
+
