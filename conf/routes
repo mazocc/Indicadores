@@ -13,6 +13,14 @@ GET     /perspectivas/{id}/editar         Perspectivas.editar
 POST    /perspectivas/salvar              Perspectivas.salvar
 DELETE  /perspectivas/{id}                Perspectivas.apagar
 
+# Objetivos
+GET     /objetivos                     Objetivos.index
+GET     /objetivos/{id}                Objetivos.visualizar
+GET     /objetivos/nova                Objetivos.cadastroPerspectiva
+GET     /objetivos/{id}/editar         Objetivos.editar
+POST    /objetivos/salvar              Objetivos.salvar
+DELETE  /objetivos/{id}                Objetivos.apagar
+
 
 GET     /favicon.ico                            404
 GET     /public/                                staticDir:public

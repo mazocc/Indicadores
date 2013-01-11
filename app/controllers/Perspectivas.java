@@ -2,7 +2,6 @@ package controllers;
 
 import models.Perspectiva;
 import play.data.validation.Valid;
-import play.mvc.Catch;
 import play.mvc.Controller;
 import play.mvc.With;
 
@@ -44,9 +43,4 @@ public class Perspectivas extends Controller {
     Perspectivas.index();
   }
 
-  @Catch(Exception.class)
-  public static void apresentaErro(Throwable e) {
-    flash.put("alerta", e.getMessage() + e.getCause().getMessage());
-    Index.index();
-  }
 }
