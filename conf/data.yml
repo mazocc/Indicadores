@@ -36,6 +36,11 @@ models.Pessoa(administrador):
   email: dragoonkiller@gmail.com
   senha: 28091990
 
+models.Pessoa(mauriciocc):
+    nome: Mauricio Colognese Concatto
+    email: mauriciocc@outlook.com
+    senha: 28091990
+
 models.ForcaTarefa(forca_um):
   pessoas:
     - administrador

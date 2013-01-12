@@ -40,4 +40,8 @@ public class Indicador extends Model {
     @JoinColumn(name = "objetivo_id", nullable = false)
     public Objetivo objetivo;
 
+    @Override
+    public String toString() {
+        return id + " - " + descricao;
+    }
 }

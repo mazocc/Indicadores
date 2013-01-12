@@ -1,5 +1,7 @@
 #{extends 'principal.html'/}
-#{set title: 'Perspectivas'/}
+#{set 'titulo'}
+&{'perspectivas'}
+#{/set}
 
 #{a @Perspectivas.cadastroPerspectiva()}&{'nova.perspectiva'}#{/a}
 <table class="table table-hover table-condensed">
@@ -15,8 +17,8 @@
         <td>${_.descricao}</td>
         <td>
             #{a @Perspectivas.editar(_.id)}
-            <but class="icon-edit"/>#{/a}
-            #{a @Perspectivas.apagar(_.id)}<span class="icon-remove"/>#{/a}
+                <but class="icon-edit"/>#{/a}
+                #{a @Perspectivas.apagar(_.id)}<span class="icon-remove"/>#{/a}
         </td>
     <tr>
 

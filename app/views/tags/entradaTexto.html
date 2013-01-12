@@ -1,0 +1,6 @@
+#{field _campo }
+<label for="${field.id}">&{field.name}</label>
+<input type="text" id="${field.id}" name="${field.name}" value="${groovy.util.Eval.me('_caller', _caller, '_caller.' +
+field.name.replace('.', '?.'))}"/>
+<span class="text-error verticalAlignSuper">${field.error}</span>
+#{/field}

@@ -1,0 +1,4 @@
+#{field _campo }
+<input type="hidden" name="${field.name}" value="${groovy.util.Eval.me('_caller', _caller, '_caller.' +
+field.name.replace('.', '?.'))}"/>
+#{/field}

@@ -1,30 +1,15 @@
 #{extends 'principal.html'/}
-#{set title: 'Objetivs'/}
+#{set 'titulo'}
+&{'objetivos'}
+#{/set}
 
+#{formTemplate acao: @salvar(),
+metodo: 'POST',
+titulo: objetivo != null && objetivo.id != null ? 'editando.objetivo' : 'novo.objetivo' ,
+botao: objetivo != null && objetivo.id != null ? 'salvar.modificacoes' : 'cadastrar'}
 
-#{form @salvar(), method:'POST'}
-<fieldset>
-    <legend>&{'novo.objetivo'}</legend>
-  #{mostraErro /}
-  #{field 'objetivo.id'}
-      <input type="hidden" id="${field.id}" name="${field.name}" value="${field.value}">
-  #{/field}
-  #{field 'objetivo.descricao'}
-      <p>
-          <label>&{field.name}</label>
-          <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" required/>
-          <span class="text-error verticalAlignSuper">${field.error}</span>
-      </p>
-  #{/field}
-  #{field 'objetivo.perspectiva'}
-      <p>
-          <label>&{field.name}</label>
-          <select name=""
-          <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" required/>
-          <span class="text-error verticalAlignSuper">${field.error}</span>
-      </p>
-  #{/field}
+    #{campoEscondido campo:'objetivo.id' /}
+    #{entradaTexto campo:'objetivo.descricao'/}
+    #{selecioneUm campo:'objetivo.perspectiva', modelo:'Perspectiva'/}
 
-    <p><input type="submit" value="&{'cadastrar'}" class="btn btn-primary"></p>
-</fieldset>
-#{/form}
+#{/formTemplate}

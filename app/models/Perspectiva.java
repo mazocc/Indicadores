@@ -18,4 +18,8 @@ public class Perspectiva extends Model {
     @OneToMany(mappedBy = "perspectiva")
     public List<Objetivo> objetivos;
 
+    @Override
+    public String toString() {
+        return id + " - " + descricao;
+    }
 }

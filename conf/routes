@@ -1,13 +1,14 @@
 # Modulos
-*       /                                 module:secure
-*       /admin                            module:crud
+*       /     module:secure
+
+
 
 # Index
 GET     /                                 Index.index
 
 # Perspectivas
 GET     /perspectivas                     Perspectivas.index
-GET     /perspectivas/{id}                Perspectivas.visualizar
+GET     /perspectivas/{<[0-9]+>id}        Perspectivas.visualizar
 GET     /perspectivas/nova                Perspectivas.cadastroPerspectiva
 GET     /perspectivas/{id}/editar         Perspectivas.editar
 POST    /perspectivas/salvar              Perspectivas.salvar
@@ -24,6 +25,9 @@ DELETE  /objetivos/{id}                Objetivos.apagar
 
 GET     /favicon.ico                            404
 GET     /public/                                staticDir:public
+
+# Import CRUD routes
+*     /admin           module:crud
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

@@ -1,22 +1,14 @@
 #{extends 'principal.html'/}
-#{set title: 'Perspectivas'/}
+#{set 'titulo'}
+&{'perspectivas'}
+#{/set}
 
+#{crud.textField /}
+#{formTemplate acao: @salvar(),
+metodo: 'POST',
+titulo: perspectiva != null && perspectiva.id != null ? 'editando.perspectiva' : 'nova.perspectiva' ,
+botao: perspectiva != null && perspectiva.id != null ? 'salvar.modificacoes' : 'cadastrar'}
+    #{campoEscondido campo: 'perspectiva.id' /}
+    #{entradaTexto campo:'perspectiva.descricao'/}
 
-#{form @salvar(), method:'POST'}
-<fieldset>
-    <legend>&{'nova.perspectiva'}</legend>
-  #{mostraErro /}
-  #{field 'perspectiva.id'}
-      <input type="hidden" id="${field.id}" name="${field.name}" value="${field.value}">
-  #{/field}
-  #{field 'perspectiva.descricao'}
-      <p>
-          <label>&{field.name}</label>
-          <input type="text" id="${field.id}" name="${field.name}" value="${field.value}" required/>
-          <span class="text-error verticalAlignSuper">${field.error}</span>
-      </p>
-  #{/field}
-
-    <p><input type="submit" value="&{'cadastrar'}" class="btn btn-primary"></p>
-</fieldset>
-#{/form}
+#{/formTemplate}
