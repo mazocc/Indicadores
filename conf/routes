@@ -1,26 +1,28 @@
 # Modulos
 *       /     module:secure
 
-
-
 # Index
 GET     /                                 Index.index
 
 # Perspectivas
-GET     /perspectivas                     Perspectivas.index
-GET     /perspectivas/{<[0-9]+>id}        Perspectivas.visualizar
-GET     /perspectivas/nova                Perspectivas.cadastroPerspectiva
-GET     /perspectivas/{id}/editar         Perspectivas.editar
-POST    /perspectivas/salvar              Perspectivas.salvar
-DELETE  /perspectivas/{id}                Perspectivas.apagar
+GET     /perspectivas                                Perspectivas.index
+GET     /perspectivas/{<[0-9]+>id}                   Perspectivas.visualizar
+GET     /perspectivas/nova                          Perspectivas.cadastroPerspectiva
+GET     /perspectivas/nova                          Perspectivas.cadastroPerspectiva
+GET     /perspectivas/{<[0-9]+>id}/editar         Perspectivas.editar
+POST    /perspectivas/salvar                        Perspectivas.salvar
+DELETE  /perspectivas/{<[0-9]+>id}                Perspectivas.apagar
 
 # Objetivos
 GET     /objetivos                     Objetivos.index
-GET     /objetivos/{id}                Objetivos.visualizar
+GET     /objetivos/{<[0-9]+>id}                Objetivos.visualizar
 GET     /objetivos/nova                Objetivos.cadastroPerspectiva
-GET     /objetivos/{id}/editar         Objetivos.editar
+GET     /objetivos/{<[0-9]+>id}/editar         Objetivos.editar
 POST    /objetivos/salvar              Objetivos.salvar
-DELETE  /objetivos/{id}                Objetivos.apagar
+DELETE  /objetivos/{<[0-9]+>id}               Objetivos.apagar
+
+# Indicadores
+GET     /indicadores/{<[0-9]+>id}       Indicadores.visualizar
 
 
 GET     /favicon.ico                            404

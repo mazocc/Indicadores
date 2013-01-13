@@ -1,5 +1,5 @@
 package graficos.inter;
 
-public enum ChartType {
+public enum TipoGrafico {
     line, spline, area, areaspline, column, bar, pie, scatter
 }

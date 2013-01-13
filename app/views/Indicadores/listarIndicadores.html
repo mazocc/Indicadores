@@ -1,0 +1,25 @@
+#{extends 'principal.html'/}
+
+<ul>
+#{list items: perspectivas, as:'perspectiva'}
+    <li>
+    ${perspectiva.descricao}
+        <ul>
+            #{list items: perspectiva.objetivos, as:'objetivo'}
+                <li>
+                ${objetivo.descricao}
+                    <ul>
+                        #{list items:objetivo.indicadores, as: 'indicador'}
+                            <li>
+                                <a href="@{Indicadores.visualizar(indicador.id)}">${indicador.descricao}</a>
+                            </li>
+                        #{/list}
+                    </ul>
+
+                </li>
+            #{/list}
+        </ul>
+    </li>
+
+#{/list}
+</ul>

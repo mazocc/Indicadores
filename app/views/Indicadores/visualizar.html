@@ -1,0 +1,38 @@
+#{extends 'principal.html'/}
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+    var chart;
+    $(document).ready(function () {
+        chart = new Highcharts.Chart({
+            chart:{
+                renderTo:'grafico',
+                type:'column'
+            },
+            title:{
+                text:'${indicador.descricao}'
+            },
+            xAxis:{
+                categories:['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+            },
+            yAxis:{
+                title:{
+                    text:'Valores'
+                }
+            },
+            series:[
+                {
+                    data:[1, 0, 4, 5]
+                },
+                {
+                    data:[5, 7, 3, 3]
+                }
+            ]
+        });
+    });
+</script>
+#{/set}
+
+<div id="grafico">
+
+</div>

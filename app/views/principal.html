@@ -28,10 +28,12 @@
 #{rodape /}
 </div>
 
-<script type="text/javascript" src="@{'/public/javascripts/jquery-1.8.3.min.js'}"></script>
-<script type="text/javascript" src="@{'/public/bootstrap/js/bootstrap.min.js'}"></script>
-<script type="text/javascript" src="@{'/public/highcharts/js/highcharts.js'}"></script>
-<script type="text/javascript" src="@{'/public/highcharts/js/themes/gray.js'}"></script>
+<script type="text/javascript" src="@{'/public/javascripts/jquery-1.8.3.min.js'}"
+        charset="${_response_encoding}"></script>
+<script type="text/javascript" src="@{'/public/bootstrap/js/bootstrap.min.js'}"
+        charset="${_response_encoding}"></script>
+<script type="text/javascript" src="@{'/public/highcharts/js/highcharts.js'}" charset="${_response_encoding}"></script>
+<script type="text/javascript" src="@{'/public/highcharts/js/themes/gray.js'}" charset="${_response_encoding}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         if ($("[rel=tooltip]").length) {
