@@ -2,15 +2,16 @@ package graficos.highchart;
 
 import graficos.inter.Categoria;
 
-class HighChartCategoria implements Categoria {
-    public String descricao;
+public class HighChartCategoria implements Categoria {
 
-    public HighChartCategoria(String descricao) {
-        this.descricao = descricao;
-    }
+  public String descricao;
 
-    @Override
-    public String descricao() {
-        return descricao;
-    }
+  public HighChartCategoria(String descricao) {
+    this.descricao = descricao;
+  }
+
+  @Override
+  public String descricao() {
+    return descricao;
+  }
 }

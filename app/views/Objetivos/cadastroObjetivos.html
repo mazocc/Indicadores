@@ -8,8 +8,8 @@ metodo: 'POST',
 titulo: objetivo != null && objetivo.id != null ? 'editando.objetivo' : 'novo.objetivo' ,
 botao: objetivo != null && objetivo.id != null ? 'salvar.modificacoes' : 'cadastrar'}
 
-    #{campoEscondido campo:'objetivo.id' /}
-    #{entradaTexto campo:'objetivo.descricao'/}
-    #{selecioneUm campo:'objetivo.perspectiva', modelo:'Perspectiva'/}
+  #{campoEscondido campo:'objetivo.id' /}
+  #{entradaTexto campo:'objetivo.descricao'/}
+  #{selecioneUm campo:'objetivo.perspectiva', modelo:'Perspectiva'/}
 
 #{/formTemplate}

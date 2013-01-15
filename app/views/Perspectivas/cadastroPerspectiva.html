@@ -8,7 +8,7 @@
 metodo: 'POST',
 titulo: perspectiva != null && perspectiva.id != null ? 'editando.perspectiva' : 'nova.perspectiva' ,
 botao: perspectiva != null && perspectiva.id != null ? 'salvar.modificacoes' : 'cadastrar'}
-    #{campoEscondido campo: 'perspectiva.id' /}
-    #{entradaTexto campo:'perspectiva.descricao'/}
+  #{campoEscondido campo: 'perspectiva.id' /}
+  #{entradaTexto campo:'perspectiva.descricao'/}
 
 #{/formTemplate}

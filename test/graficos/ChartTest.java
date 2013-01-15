@@ -11,18 +11,18 @@ import play.test.UnitTest;
 
 public class ChartTest extends UnitTest {
 
-    @Test
-    public void testChartCreation() {
-        Axis xEixo = null, yEixo = null;
-        Title titulo = new HighChartTitle("Titulo");
-        Series series = null;
+  @Test
+  public void testChartCreation() {
+    Axis xEixo = null, yEixo = null;
+    Title titulo = new HighChartTitle("Titulo");
+    Series series = null;
 
-        Chart grafico = new HighChart(
-                TipoGrafico.bar
-                , title
-                , xAxis
-                , yAxis
-                , series);
-    }
+    Chart grafico = new HighChart(
+        TipoGrafico.bar
+        , title
+        , xAxis
+        , yAxis
+        , series);
+  }
 
 }

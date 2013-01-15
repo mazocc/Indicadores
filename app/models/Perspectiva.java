@@ -11,15 +11,15 @@ import java.util.List;
 @Entity
 public class Perspectiva extends Model {
 
-    @Required
-    @MinSize(4)
-    public String descricao;
+  @Required
+  @MinSize(4)
+  public String descricao;
 
-    @OneToMany(mappedBy = "perspectiva")
-    public List<Objetivo> objetivos;
+  @OneToMany(mappedBy = "perspectiva")
+  public List<Objetivo> objetivos;
 
-    @Override
-    public String toString() {
-        return id + " - " + descricao;
-    }
+  @Override
+  public String toString() {
+    return id + " - " + descricao;
+  }
 }

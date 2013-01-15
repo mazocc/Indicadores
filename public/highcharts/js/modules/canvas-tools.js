@@ -21,22 +21,22 @@
 function RGBColor(m) {
     this.ok = !1;
     m.charAt(0) == "#" && (m = m.substr(1, 6));
-    var m = m.replace(/ /g, ""), m = m.toLowerCase(), a = {aliceblue:"f0f8ff", antiquewhite:"faebd7", aqua:"00ffff", aquamarine:"7fffd4", azure:"f0ffff", beige:"f5f5dc", bisque:"ffe4c4", black:"000000", blanchedalmond:"ffebcd", blue:"0000ff", blueviolet:"8a2be2", brown:"a52a2a", burlywood:"deb887", cadetblue:"5f9ea0", chartreuse:"7fff00", chocolate:"d2691e", coral:"ff7f50", cornflowerblue:"6495ed", cornsilk:"fff8dc", crimson:"dc143c", cyan:"00ffff", darkblue:"00008b",
-        darkcyan:"008b8b", darkgoldenrod:"b8860b", darkgray:"a9a9a9", darkgreen:"006400", darkkhaki:"bdb76b", darkmagenta:"8b008b", darkolivegreen:"556b2f", darkorange:"ff8c00", darkorchid:"9932cc", darkred:"8b0000", darksalmon:"e9967a", darkseagreen:"8fbc8f", darkslateblue:"483d8b", darkslategray:"2f4f4f", darkturquoise:"00ced1", darkviolet:"9400d3", deeppink:"ff1493", deepskyblue:"00bfff", dimgray:"696969", dodgerblue:"1e90ff", feldspar:"d19275", firebrick:"b22222", floralwhite:"fffaf0", forestgreen:"228b22", fuchsia:"ff00ff",
-        gainsboro:"dcdcdc", ghostwhite:"f8f8ff", gold:"ffd700", goldenrod:"daa520", gray:"808080", green:"008000", greenyellow:"adff2f", honeydew:"f0fff0", hotpink:"ff69b4", indianred:"cd5c5c", indigo:"4b0082", ivory:"fffff0", khaki:"f0e68c", lavender:"e6e6fa", lavenderblush:"fff0f5", lawngreen:"7cfc00", lemonchiffon:"fffacd", lightblue:"add8e6", lightcoral:"f08080", lightcyan:"e0ffff", lightgoldenrodyellow:"fafad2", lightgrey:"d3d3d3", lightgreen:"90ee90", lightpink:"ffb6c1", lightsalmon:"ffa07a", lightseagreen:"20b2aa", lightskyblue:"87cefa",
-        lightslateblue:"8470ff", lightslategray:"778899", lightsteelblue:"b0c4de", lightyellow:"ffffe0", lime:"00ff00", limegreen:"32cd32", linen:"faf0e6", magenta:"ff00ff", maroon:"800000", mediumaquamarine:"66cdaa", mediumblue:"0000cd", mediumorchid:"ba55d3", mediumpurple:"9370d8", mediumseagreen:"3cb371", mediumslateblue:"7b68ee", mediumspringgreen:"00fa9a", mediumturquoise:"48d1cc", mediumvioletred:"c71585", midnightblue:"191970", mintcream:"f5fffa", mistyrose:"ffe4e1", moccasin:"ffe4b5", navajowhite:"ffdead", navy:"000080",
-        oldlace:"fdf5e6", olive:"808000", olivedrab:"6b8e23", orange:"ffa500", orangered:"ff4500", orchid:"da70d6", palegoldenrod:"eee8aa", palegreen:"98fb98", paleturquoise:"afeeee", palevioletred:"d87093", papayawhip:"ffefd5", peachpuff:"ffdab9", peru:"cd853f", pink:"ffc0cb", plum:"dda0dd", powderblue:"b0e0e6", purple:"800080", red:"ff0000", rosybrown:"bc8f8f", royalblue:"4169e1", saddlebrown:"8b4513", salmon:"fa8072", sandybrown:"f4a460", seagreen:"2e8b57", seashell:"fff5ee", sienna:"a0522d", silver:"c0c0c0", skyblue:"87ceeb", slateblue:"6a5acd",
-        slategray:"708090", snow:"fffafa", springgreen:"00ff7f", steelblue:"4682b4", tan:"d2b48c", teal:"008080", thistle:"d8bfd8", tomato:"ff6347", turquoise:"40e0d0", violet:"ee82ee", violetred:"d02090", wheat:"f5deb3", white:"ffffff", whitesmoke:"f5f5f5", yellow:"ffff00", yellowgreen:"9acd32"}, c;
+    var m = m.replace(/ /g, ""), m = m.toLowerCase(), a = {aliceblue: "f0f8ff", antiquewhite: "faebd7", aqua: "00ffff", aquamarine: "7fffd4", azure: "f0ffff", beige: "f5f5dc", bisque: "ffe4c4", black: "000000", blanchedalmond: "ffebcd", blue: "0000ff", blueviolet: "8a2be2", brown: "a52a2a", burlywood: "deb887", cadetblue: "5f9ea0", chartreuse: "7fff00", chocolate: "d2691e", coral: "ff7f50", cornflowerblue: "6495ed", cornsilk: "fff8dc", crimson: "dc143c", cyan: "00ffff", darkblue: "00008b",
+        darkcyan: "008b8b", darkgoldenrod: "b8860b", darkgray: "a9a9a9", darkgreen: "006400", darkkhaki: "bdb76b", darkmagenta: "8b008b", darkolivegreen: "556b2f", darkorange: "ff8c00", darkorchid: "9932cc", darkred: "8b0000", darksalmon: "e9967a", darkseagreen: "8fbc8f", darkslateblue: "483d8b", darkslategray: "2f4f4f", darkturquoise: "00ced1", darkviolet: "9400d3", deeppink: "ff1493", deepskyblue: "00bfff", dimgray: "696969", dodgerblue: "1e90ff", feldspar: "d19275", firebrick: "b22222", floralwhite: "fffaf0", forestgreen: "228b22", fuchsia: "ff00ff",
+        gainsboro: "dcdcdc", ghostwhite: "f8f8ff", gold: "ffd700", goldenrod: "daa520", gray: "808080", green: "008000", greenyellow: "adff2f", honeydew: "f0fff0", hotpink: "ff69b4", indianred: "cd5c5c", indigo: "4b0082", ivory: "fffff0", khaki: "f0e68c", lavender: "e6e6fa", lavenderblush: "fff0f5", lawngreen: "7cfc00", lemonchiffon: "fffacd", lightblue: "add8e6", lightcoral: "f08080", lightcyan: "e0ffff", lightgoldenrodyellow: "fafad2", lightgrey: "d3d3d3", lightgreen: "90ee90", lightpink: "ffb6c1", lightsalmon: "ffa07a", lightseagreen: "20b2aa", lightskyblue: "87cefa",
+        lightslateblue: "8470ff", lightslategray: "778899", lightsteelblue: "b0c4de", lightyellow: "ffffe0", lime: "00ff00", limegreen: "32cd32", linen: "faf0e6", magenta: "ff00ff", maroon: "800000", mediumaquamarine: "66cdaa", mediumblue: "0000cd", mediumorchid: "ba55d3", mediumpurple: "9370d8", mediumseagreen: "3cb371", mediumslateblue: "7b68ee", mediumspringgreen: "00fa9a", mediumturquoise: "48d1cc", mediumvioletred: "c71585", midnightblue: "191970", mintcream: "f5fffa", mistyrose: "ffe4e1", moccasin: "ffe4b5", navajowhite: "ffdead", navy: "000080",
+        oldlace: "fdf5e6", olive: "808000", olivedrab: "6b8e23", orange: "ffa500", orangered: "ff4500", orchid: "da70d6", palegoldenrod: "eee8aa", palegreen: "98fb98", paleturquoise: "afeeee", palevioletred: "d87093", papayawhip: "ffefd5", peachpuff: "ffdab9", peru: "cd853f", pink: "ffc0cb", plum: "dda0dd", powderblue: "b0e0e6", purple: "800080", red: "ff0000", rosybrown: "bc8f8f", royalblue: "4169e1", saddlebrown: "8b4513", salmon: "fa8072", sandybrown: "f4a460", seagreen: "2e8b57", seashell: "fff5ee", sienna: "a0522d", silver: "c0c0c0", skyblue: "87ceeb", slateblue: "6a5acd",
+        slategray: "708090", snow: "fffafa", springgreen: "00ff7f", steelblue: "4682b4", tan: "d2b48c", teal: "008080", thistle: "d8bfd8", tomato: "ff6347", turquoise: "40e0d0", violet: "ee82ee", violetred: "d02090", wheat: "f5deb3", white: "ffffff", whitesmoke: "f5f5f5", yellow: "ffff00", yellowgreen: "9acd32"}, c;
     for (c in a)m == c && (m = a[c]);
     var d = [
-        {re:/^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/, example:["rgb(123, 234, 45)", "rgb(255,234,245)"], process:function (b) {
+        {re: /^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/, example: ["rgb(123, 234, 45)", "rgb(255,234,245)"], process: function (b) {
             return[parseInt(b[1]), parseInt(b[2]), parseInt(b[3])]
         }},
-        {re:/^(\w{2})(\w{2})(\w{2})$/,
-            example:["#00ff00", "336699"], process:function (b) {
+        {re: /^(\w{2})(\w{2})(\w{2})$/,
+            example: ["#00ff00", "336699"], process: function (b) {
             return[parseInt(b[1], 16), parseInt(b[2], 16), parseInt(b[3], 16)]
         }},
-        {re:/^(\w{1})(\w{1})(\w{1})$/, example:["#fb0", "f0f"], process:function (b) {
+        {re: /^(\w{1})(\w{1})(\w{1})$/, example: ["#fb0", "f0f"], process: function (b) {
             return[parseInt(b[1] + b[1], 16), parseInt(b[2] + b[2], 16), parseInt(b[3] + b[3], 16)]
         }}
     ];
@@ -85,7 +85,7 @@ if (!Array.prototype.indexOf)Array.prototype.indexOf = function (m) {
 };
 (function () {
     function m() {
-        var a = {FRAMERATE:30, MAX_VIRTUAL_PIXELS:3E4};
+        var a = {FRAMERATE: 30, MAX_VIRTUAL_PIXELS: 3E4};
         a.init = function (c) {
             a.Definitions = {};
             a.Styles = {};
@@ -98,7 +98,7 @@ if (!Array.prototype.indexOf)Array.prototype.indexOf = function (m) {
                     this.viewPorts = []
                 };
                 this.SetCurrent = function (a, b) {
-                    this.viewPorts.push({width:a, height:b})
+                    this.viewPorts.push({width: a, height: b})
                 };
                 this.RemoveCurrent = function () {
                     this.viewPorts.pop()
@@ -161,7 +161,7 @@ if (!Array.prototype.indexOf)Array.prototype.indexOf = function (m) {
                 return this.hasValue() ? this.numValue() : b
             };
             var b = this;
-            this.Color = {addOpacity:function (d) {
+            this.Color = {addOpacity: function (d) {
                 var c = b.value;
                 if (d != null && d != "") {
                     var f = new RGBColor(b.value);
@@ -169,36 +169,36 @@ if (!Array.prototype.indexOf)Array.prototype.indexOf = function (m) {
                 }
                 return new a.Property(b.name, c)
             }};
-            this.Definition = {getDefinition:function () {
+            this.Definition = {getDefinition: function () {
                 var d = b.value.replace(/^(url\()?#([^\)]+)\)?$/, "$2");
                 return a.Definitions[d]
-            }, isUrl:function () {
+            }, isUrl: function () {
                 return b.value.indexOf("url(") ==
                     0
-            }, getFillStyle:function (b) {
+            }, getFillStyle: function (b) {
                 var d = this.getDefinition();
                 return d != null && d.createGradient ? d.createGradient(a.ctx, b) : d != null && d.createPattern ? d.createPattern(a.ctx, b) : null
             }};
-            this.Length = {DPI:function () {
+            this.Length = {DPI: function () {
                 return 96
-            }, EM:function (b) {
+            }, EM: function (b) {
                 var d = 12, c = new a.Property("fontSize", a.Font.Parse(a.ctx.font).fontSize);
                 c.hasValue() && (d = c.Length.toPixels(b));
                 return d
-            }, toPixels:function (d) {
+            }, toPixels: function (d) {
                 if (!b.hasValue())return 0;
                 var c = b.value + "";
                 return c.match(/em$/) ? b.numValue() * this.EM(d) : c.match(/ex$/) ? b.numValue() * this.EM(d) / 2 : c.match(/px$/) ?
                     b.numValue() : c.match(/pt$/) ? b.numValue() * 1.25 : c.match(/pc$/) ? b.numValue() * 15 : c.match(/cm$/) ? b.numValue() * this.DPI(d) / 2.54 : c.match(/mm$/) ? b.numValue() * this.DPI(d) / 25.4 : c.match(/in$/) ? b.numValue() * this.DPI(d) : c.match(/%$/) ? b.numValue() * a.ViewPort.ComputeSize(d) : b.numValue()
             }};
-            this.Time = {toMilliseconds:function () {
+            this.Time = {toMilliseconds: function () {
                 if (!b.hasValue())return 0;
                 var a = b.value + "";
                 if (a.match(/s$/))return b.numValue() * 1E3;
                 a.match(/ms$/);
                 return b.numValue()
             }};
-            this.Angle = {toRadians:function () {
+            this.Angle = {toRadians: function () {
                 if (!b.hasValue())return 0;
                 var a = b.value +
                     "";
@@ -211,8 +211,8 @@ if (!Array.prototype.indexOf)Array.prototype.indexOf = function (m) {
             this.Weights = "normal,bold,bolder,lighter,100,200,300,400,500,600,700,800,900,inherit".split(",");
             this.CreateFont = function (d, b, c, e, f, g) {
                 g = g != null ? this.Parse(g) : this.CreateFont("", "", "", "", "", a.ctx.font);
-                return{fontFamily:f ||
-                    g.fontFamily, fontSize:e || g.fontSize, fontStyle:d || g.fontStyle, fontWeight:c || g.fontWeight, fontVariant:b || g.fontVariant, toString:function () {
+                return{fontFamily: f ||
+                    g.fontFamily, fontSize: e || g.fontSize, fontStyle: d || g.fontStyle, fontWeight: c || g.fontWeight, fontVariant: b || g.fontVariant, toString: function () {
                     return[this.fontStyle, this.fontVariant, this.fontWeight, this.fontSize, this.fontFamily].join(" ")
                 }}
             };
@@ -1489,12 +1489,12 @@ if (!Array.prototype.indexOf)Array.prototype.indexOf = function (m) {
                     0
             };
             this.onclick = function (a, d) {
-                this.events.push({type:"onclick", x:a, y:d, run:function (a) {
+                this.events.push({type: "onclick", x: a, y: d, run: function (a) {
                     if (a.onclick)a.onclick()
                 }})
             };
             this.onmousemove = function (a, d) {
-                this.events.push({type:"onmousemove", x:a, y:d, run:function (a) {
+                this.events.push({type: "onmousemove", x: a, y: d, run: function (a) {
                     if (a.onmousemove)a.onmousemove()
                 }})
             };
@@ -1538,53 +1538,53 @@ if (!Array.prototype.indexOf)Array.prototype.indexOf = function (m) {
     }
 })();
 if (CanvasRenderingContext2D)CanvasRenderingContext2D.prototype.drawSvg = function (m, a, c, d, b) {
-    canvg(this.canvas, m, {ignoreMouse:!0, ignoreAnimation:!0, ignoreDimensions:!0, ignoreClear:!0, offsetX:a, offsetY:c, scaleWidth:d, scaleHeight:b})
+    canvg(this.canvas, m, {ignoreMouse: !0, ignoreAnimation: !0, ignoreDimensions: !0, ignoreClear: !0, offsetX: a, offsetY: c, scaleWidth: d, scaleHeight: b})
 };
 (function (m) {
     var a = m.css, c = m.CanVGRenderer, d = m.SVGRenderer, b = m.extend, k = m.merge, e = m.addEvent, f = m.createElement, g = m.discardElement;
     b(c.prototype, d.prototype);
-    b(c.prototype, {create:function (a, b, c, d) {
+    b(c.prototype, {create: function (a, b, c, d) {
         this.setContainer(b, c, d);
         this.configure(a)
-    }, setContainer:function (a, b, c) {
-        var d = a.style, e = a.parentNode, g = d.left, d = d.top, k = a.offsetWidth, m = a.offsetHeight, s = {visibility:"hidden", position:"absolute"};
+    }, setContainer: function (a, b, c) {
+        var d = a.style, e = a.parentNode, g = d.left, d = d.top, k = a.offsetWidth, m = a.offsetHeight, s = {visibility: "hidden", position: "absolute"};
         this.init.apply(this, [a, b, c]);
-        this.canvas = f("canvas", {width:k, height:m}, {position:"relative", left:g, top:d}, a);
+        this.canvas = f("canvas", {width: k, height: m}, {position: "relative", left: g, top: d}, a);
         this.ttLine = f("div", null, s, e);
         this.ttDiv = f("div", null, s, e);
         this.ttTimer = void 0;
-        this.hiddenSvg = a = f("div", {width:k, height:m}, {visibility:"hidden", left:g, top:d}, e);
+        this.hiddenSvg = a = f("div", {width: k, height: m}, {visibility: "hidden", left: g, top: d}, e);
         a.appendChild(this.box)
-    }, configure:function (b) {
-        var c = this, d = b.options.tooltip, f = d.borderWidth, g = c.ttDiv, m = d.style, p = c.ttLine, t = parseInt(m.padding, 10), m = k(m, {padding:t + "px", "background-color":d.backgroundColor, "border-style":"solid", "border-width":f + "px", "border-radius":d.borderRadius + "px"});
-        d.shadow && (m = k(m, {"box-shadow":"1px 1px 3px gray",
-            "-webkit-box-shadow":"1px 1px 3px gray"}));
+    }, configure: function (b) {
+        var c = this, d = b.options.tooltip, f = d.borderWidth, g = c.ttDiv, m = d.style, p = c.ttLine, t = parseInt(m.padding, 10), m = k(m, {padding: t + "px", "background-color": d.backgroundColor, "border-style": "solid", "border-width": f + "px", "border-radius": d.borderRadius + "px"});
+        d.shadow && (m = k(m, {"box-shadow": "1px 1px 3px gray",
+            "-webkit-box-shadow": "1px 1px 3px gray"}));
         a(g, m);
-        a(p, {"border-left":"1px solid darkgray"});
+        a(p, {"border-left": "1px solid darkgray"});
         e(b, "tooltipRefresh", function (d) {
             var e = b.container, f = e.offsetLeft, e = e.offsetTop, k;
             g.innerHTML = d.text;
-            k = b.tooltip.getPosition(g.offsetWidth, g.offsetHeight, {plotX:d.x, plotY:d.y});
-            a(g, {visibility:"visible", left:k.x + "px", top:k.y + "px", "border-color":d.borderColor});
-            a(p, {visibility:"visible", left:f + d.x + "px", top:e + b.plotTop + "px", height:b.plotHeight + "px"});
+            k = b.tooltip.getPosition(g.offsetWidth, g.offsetHeight, {plotX: d.x, plotY: d.y});
+            a(g, {visibility: "visible", left: k.x + "px", top: k.y + "px", "border-color": d.borderColor});
+            a(p, {visibility: "visible", left: f + d.x + "px", top: e + b.plotTop + "px", height: b.plotHeight + "px"});
             c.ttTimer !== void 0 && clearTimeout(c.ttTimer);
             c.ttTimer = setTimeout(function () {
                 a(g,
-                    {visibility:"hidden"});
-                a(p, {visibility:"hidden"})
+                    {visibility: "hidden"});
+                a(p, {visibility: "hidden"})
             }, 3E3)
         })
-    }, destroy:function () {
+    }, destroy: function () {
         g(this.canvas);
         this.ttTimer !== void 0 && clearTimeout(this.ttTimer);
         g(this.ttLine);
         g(this.ttDiv);
         g(this.hiddenSvg);
         return d.prototype.destroy.apply(this)
-    }, color:function (a, b, c) {
+    }, color: function (a, b, c) {
         a && a.linearGradient && (a = a.stops[a.stops.length - 1][1]);
         return d.prototype.color.call(this, a, b, c)
-    }, draw:function () {
+    }, draw: function () {
         window.canvg(this.canvas, this.hiddenSvg.innerHTML)
     }})
 })(Highcharts);

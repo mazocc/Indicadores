@@ -2,6 +2,7 @@ package controllers;
 
 import flexjson.JSONSerializer;
 import flexjson.transformer.BasicDateTransformer;
+import graficos.highchart.HighChartFactory;
 import graficos.inter.Grafico;
 import models.Indicador;
 import models.Meta;
@@ -13,25 +14,27 @@ import java.util.List;
 
 public class Indicadores extends Controller {
 
-    public static void index() {
-    }
+  public static void index() {
+  }
 
-    public static void listarIndicadores() {
-        List<Perspectiva> perspectivas = Perspectiva.findAll();
-        render(perspectivas);
-    }
+  public static void listarIndicadores() {
+    List<Perspectiva> perspectivas = Perspectiva.findAll();
+    render(perspectivas);
+  }
 
-    public static void visualizar(Long id) {
-        Indicador indicador = Indicador.findById(id);
-        Meta meta = indicador.meta;
-        Grafico grafico = null;
-        render(indicador, meta, grafico);
-        renderJSON(new JSONSerializer()
-                .transform(new BasicDateTransformer(), Date.class)
-                .include("registros").deepSerialize(indicador));
-    }
+  public static void visualizar(Long id) {
+    Indicador indicador = Indicador.findById(id);
+    Meta meta = indicador.meta;
+    Grafico grafico = null;
+    render(indicador, meta, grafico);
+    renderJSON(new JSONSerializer()
+        .transform(new BasicDateTransformer(), Date.class)
+        .include("registros").deepSerialize(indicador));
+  }
 
-    public static void visualizarJson(Long id) {
-
-    }
+  public static void visualizarJson(Long id) {
+    Indicador indicador = Indicador.findById(id);
+    Grafico grafico = new HighChartFactory(indicador).valoresIndicador();
+    renderJSON(grafico);
+  }
 }

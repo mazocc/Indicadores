@@ -13,20 +13,20 @@ import java.util.List;
 @Entity
 public class Objetivo extends Model {
 
-    @Required
-    @MinSize(4)
-    public String descricao;
+  @Required
+  @MinSize(4)
+  public String descricao;
 
-    @ManyToOne
-    @JoinColumn(name = "perspectiva_id", nullable = false)
-    @Required
-    public Perspectiva perspectiva;
+  @ManyToOne
+  @JoinColumn(name = "perspectiva_id", nullable = false)
+  @Required
+  public Perspectiva perspectiva;
 
-    @OneToMany(mappedBy = "objetivo")
-    public List<Indicador> indicadores;
+  @OneToMany(mappedBy = "objetivo")
+  public List<Indicador> indicadores;
 
-    @Override
-    public String toString() {
-        return id + " - " + descricao;
-    }
+  @Override
+  public String toString() {
+    return id + " - " + descricao;
+  }
 }

@@ -9,20 +9,20 @@ import java.util.Date;
 @Entity
 public class RegistroIndicador extends Model {
 
-    @Temporal(TemporalType.DATE)
-    @Required
-    public Date data;
+  @Temporal(TemporalType.DATE)
+  @Required
+  public Date data;
 
-    @ManyToOne
-    @JoinColumn(name = "indicador_id", nullable = false)
-    @Required
-    public Indicador indicador;
+  @ManyToOne
+  @JoinColumn(name = "indicador_id", nullable = false)
+  @Required
+  public Indicador indicador;
 
-    @Required
-    public double valor;
+  @Required
+  public double valor;
 
-    @Override
-    public String toString() {
-        return data + " - " + valor;
-    }
+  @Override
+  public String toString() {
+    return data + " - " + valor;
+  }
 }

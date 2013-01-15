@@ -14,7 +14,7 @@ POST    /perspectivas/salvar                        Perspectivas.salvar
 DELETE  /perspectivas/{<[0-9]+>id}                Perspectivas.apagar
 
 # Objetivos
-GET     /objetivos                     Objetivos.index
+GET     /objetivos                          Objetivos.index
 GET     /objetivos/{<[0-9]+>id}                Objetivos.visualizar
 GET     /objetivos/nova                Objetivos.cadastroPerspectiva
 GET     /objetivos/{<[0-9]+>id}/editar         Objetivos.editar
@@ -23,6 +23,7 @@ DELETE  /objetivos/{<[0-9]+>id}               Objetivos.apagar
 
 # Indicadores
 GET     /indicadores/{<[0-9]+>id}       Indicadores.visualizar
+GET     /indicadores/{<[0-9]+>id}/json       Indicadores.visualizarJson
 
 
 GET     /favicon.ico                            404

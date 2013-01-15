@@ -94,7 +94,7 @@
         /**
          * Initialize the Data object with the given options
          */
-        init:function (options) {
+        init: function (options) {
             this.options = options;
             this.columns = options.columns || this.rowsToColumns(options.rows) || [];
 
@@ -117,7 +117,7 @@
 
         },
 
-        dataFound:function () {
+        dataFound: function () {
 
             // Interpret the values into right types
             this.parseTypes();
@@ -136,7 +136,7 @@
         /**
          * Parse a CSV input string
          */
-        parseCSV:function () {
+        parseCSV: function () {
             var options = this.options,
                 csv = options.csv,
                 columns = this.columns,
@@ -174,7 +174,7 @@
         /**
          * Parse a HTML table
          */
-        parseTable:function () {
+        parseTable: function () {
             var options = this.options,
                 table = options.table,
                 columns = this.columns,
@@ -215,7 +215,7 @@
          * - switchRowsAndColumns
          * - startRow, endRow etc.
          */
-        parseGoogleSpreadsheet:function () {
+        parseGoogleSpreadsheet: function () {
             var self = this,
                 options = this.options,
                 googleSpreadsheetKey = options.googleSpreadsheetKey,
@@ -265,7 +265,7 @@
          * numbers or strings. Later we could loop down and find the first row with
          * numbers.
          */
-        findHeaderRow:function () {
+        findHeaderRow: function () {
             var headerRow = 0;
             each(this.columns, function (column) {
                 if (typeof column[0] !== 'string') {
@@ -278,7 +278,7 @@
         /**
          * Trim a string from whitespace
          */
-        trim:function (str) {
+        trim: function (str) {
             //return typeof str === 'number' ? str : str.replace(/^\s+|\s+$/g, ''); // fails with spreadsheet
             return typeof str === 'string' ? str.replace(/^\s+|\s+$/g, '') : str;
         },
@@ -287,7 +287,7 @@
          * Parse numeric cells in to number types and date types in to true dates.
          * @param {Object} columns
          */
-        parseTypes:function () {
+        parseTypes: function () {
             var columns = this.columns,
                 col = columns.length,
                 row,
@@ -330,10 +330,10 @@
             }
         },
         //*
-        dateFormats:{
-            'YYYY-mm-dd':{
-                regex:'^([0-9]{4})-([0-9]{2})-([0-9]{2})$',
-                parser:function (match) {
+        dateFormats: {
+            'YYYY-mm-dd': {
+                regex: '^([0-9]{4})-([0-9]{2})-([0-9]{2})$',
+                parser: function (match) {
                     return Date.UTC(+match[1], match[2] - 1, +match[3]);
                 }
             }
@@ -342,7 +342,7 @@
         /**
          * Parse a date and return it as a number. Overridable through options.parseDate.
          */
-        parseDate:function (val) {
+        parseDate: function (val) {
             var parseDate = this.options.parseDate,
                 ret,
                 key,
@@ -368,7 +368,7 @@
         /**
          * Reorganize rows into columns
          */
-        rowsToColumns:function (rows) {
+        rowsToColumns: function (rows) {
             var row,
                 rowsLength,
                 col,
@@ -394,7 +394,7 @@
         /**
          * A hook for working directly on the parsed columns
          */
-        parsed:function () {
+        parsed: function () {
             if (this.options.parsed) {
                 this.options.parsed.call(this, this.columns);
             }
@@ -404,7 +404,7 @@
          * If a complete callback function is provided in the options, interpret the
          * columns into a Highcharts options object.
          */
-        complete:function () {
+        complete: function () {
 
             var columns = this.columns,
                 hasXData,
@@ -455,18 +455,18 @@
                             null;
                     }
                     series[i] = {
-                        name:name,
-                        data:data
+                        name: name,
+                        data: data
                     };
                 }
 
                 // Do the callback
                 options.complete({
-                    xAxis:{
-                        categories:categories,
-                        type:type
+                    xAxis: {
+                        categories: categories,
+                        type: type
                     },
-                    series:series
+                    series: series
                 });
             }
         }
@@ -485,7 +485,7 @@
 
         if (userOptions && userOptions.data) {
             Highcharts.data(Highcharts.extend(userOptions.data, {
-                complete:function (dataOptions) {
+                complete: function (dataOptions) {
                     var datasets = [];
 
                     // Don't merge the data arrays themselves

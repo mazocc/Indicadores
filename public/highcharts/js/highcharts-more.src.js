@@ -46,7 +46,7 @@
         /**
          * Initiate the Pane object
          */
-        init:function (options, chart, firstAxis) {
+        init: function (options, chart, firstAxis) {
             var pane = this,
                 backgroundOption,
                 defaultOptions = pane.defaultOptions;
@@ -79,32 +79,32 @@
         /**
          * The default options object
          */
-        defaultOptions:{
+        defaultOptions: {
             // background: {conditional},
-            center:['50%', '50%'],
-            size:'85%',
-            startAngle:0
+            center: ['50%', '50%'],
+            size: '85%',
+            startAngle: 0
             //endAngle: startAngle + 360
         },
 
         /**
          * The default background options
          */
-        defaultBackgroundOptions:{
-            shape:'circle',
-            borderWidth:1,
-            borderColor:'silver',
-            backgroundColor:{
-                linearGradient:{ x1:0, y1:0, x2:0, y2:1 },
-                stops:[
+        defaultBackgroundOptions: {
+            shape: 'circle',
+            borderWidth: 1,
+            borderColor: 'silver',
+            backgroundColor: {
+                linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                stops: [
                     [0, '#FFF'],
                     [1, '#DDD']
                 ]
             },
-            from:Number.MIN_VALUE, // corrected to axis min
-            innerRadius:0,
-            to:Number.MAX_VALUE, // corrected to axis max
-            outerRadius:'105%'
+            from: Number.MIN_VALUE, // corrected to axis min
+            innerRadius: 0,
+            to: Number.MAX_VALUE, // corrected to axis max
+            outerRadius: '105%'
         }
 
     });
@@ -115,16 +115,16 @@
      * Augmented methods for the x axis in order to hide it completely, used for the X axis in gauges
      */
     var hiddenAxisMixin = {
-        getOffset:noop,
-        redraw:function () {
+        getOffset: noop,
+        redraw: function () {
             this.isDirty = false; // prevent setting Y axis dirty
         },
-        render:function () {
+        render: function () {
             this.isDirty = false; // prevent setting Y axis dirty
         },
-        setScale:noop,
-        setCategories:noop,
-        setTitle:noop
+        setScale: noop,
+        setCategories: noop,
+        setTitle: noop
     };
 
     /**
@@ -132,69 +132,69 @@
      */
     /*jslint unparam: true*/
     var radialAxisMixin = {
-        isRadial:true,
+        isRadial: true,
 
         /**
          * The default options extend defaultYAxisOptions
          */
-        defaultRadialGaugeOptions:{
-            labels:{
-                align:'center',
-                x:0,
-                y:null // auto
+        defaultRadialGaugeOptions: {
+            labels: {
+                align: 'center',
+                x: 0,
+                y: null // auto
             },
-            minorGridLineWidth:0,
-            minorTickInterval:'auto',
-            minorTickLength:10,
-            minorTickPosition:'inside',
-            minorTickWidth:1,
-            plotBands:[],
-            tickLength:10,
-            tickPosition:'inside',
-            tickWidth:2,
-            title:{
-                rotation:0
+            minorGridLineWidth: 0,
+            minorTickInterval: 'auto',
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickWidth: 1,
+            plotBands: [],
+            tickLength: 10,
+            tickPosition: 'inside',
+            tickWidth: 2,
+            title: {
+                rotation: 0
             },
-            zIndex:2 // behind dials, points in the series group
+            zIndex: 2 // behind dials, points in the series group
         },
 
         // Circular axis around the perimeter of a polar chart
-        defaultRadialXOptions:{
-            gridLineWidth:1, // spokes
-            labels:{
-                align:null, // auto
-                distance:15,
-                x:0,
-                y:null // auto
+        defaultRadialXOptions: {
+            gridLineWidth: 1, // spokes
+            labels: {
+                align: null, // auto
+                distance: 15,
+                x: 0,
+                y: null // auto
             },
-            maxPadding:0,
-            minPadding:0,
-            plotBands:[],
-            showLastLabel:false,
-            tickLength:0
+            maxPadding: 0,
+            minPadding: 0,
+            plotBands: [],
+            showLastLabel: false,
+            tickLength: 0
         },
 
         // Radial axis, like a spoke in a polar chart
-        defaultRadialYOptions:{
-            gridLineInterpolation:'circle',
-            labels:{
-                align:'right',
-                x:-3,
-                y:-2
+        defaultRadialYOptions: {
+            gridLineInterpolation: 'circle',
+            labels: {
+                align: 'right',
+                x: -3,
+                y: -2
             },
-            plotBands:[],
-            showLastLabel:false,
-            title:{
-                x:4,
-                text:null,
-                rotation:90
+            plotBands: [],
+            showLastLabel: false,
+            title: {
+                x: 4,
+                text: null,
+                rotation: 90
             }
         },
 
         /**
          * Merge and set options
          */
-        setOptions:function (userOptions) {
+        setOptions: function (userOptions) {
 
             this.options = merge(
                 this.defaultOptions,
@@ -208,7 +208,7 @@
          * Wrap the getOffset method to return zero offset for title or labels in a radial
          * axis
          */
-        getOffset:function () {
+        getOffset: function () {
             // Call the Axis prototype method (the method we're in now is on the instance)
             axisProto.getOffset.call(this);
 
@@ -224,7 +224,7 @@
          * Get the path for the axis line. This method is also referenced in the getPlotLinePath
          * method.
          */
-        getLinePath:function (lineWidth, radius) {
+        getLinePath: function (lineWidth, radius) {
             var center = this.center;
             radius = pick(radius, center[2] / 2 - this.offset);
 
@@ -234,10 +234,10 @@
                 radius,
                 radius,
                 {
-                    start:this.startAngleRad,
-                    end:this.endAngleRad,
-                    open:true,
-                    innerR:0
+                    start: this.startAngleRad,
+                    end: this.endAngleRad,
+                    open: true,
+                    innerR: 0
                 }
             );
         },
@@ -247,7 +247,7 @@
          * in rotation. This allows the translate method to return angle for
          * any given value.
          */
-        setAxisTranslation:function () {
+        setAxisTranslation: function () {
 
             // Call uber method
             axisProto.setAxisTranslation.call(this);
@@ -275,7 +275,7 @@
          * In case of auto connect, add one closestPointRange to the max value right before
          * tickPositions are computed, so that ticks will extend passed the real max.
          */
-        beforeSetTickPositions:function () {
+        beforeSetTickPositions: function () {
             if (this.autoConnect) {
                 this.max += (this.categories && 1) || this.pointRange || this.closestPointRange; // #1197
             }
@@ -285,7 +285,7 @@
          * Override the setAxisSize method to use the arc's circumference as length. This
          * allows tickPixelInterval to apply to pixel lengths along the perimeter
          */
-        setAxisSize:function () {
+        setAxisSize: function () {
 
             axisProto.setAxisSize.call(this);
 
@@ -300,7 +300,7 @@
          * Returns the x, y coordinate of a point given by a value and a pixel distance
          * from center
          */
-        getPosition:function (value, length) {
+        getPosition: function (value, length) {
             if (!this.isCircular) {
                 length = this.translate(value);
                 value = this.min;
@@ -315,7 +315,7 @@
         /**
          * Translate from intermediate plotX (angle), plotY (axis.len - radius) to final chart coordinates.
          */
-        postTranslate:function (angle, radius) {
+        postTranslate: function (angle, radius) {
 
             var chart = this.chart,
                 center = this.center;
@@ -323,8 +323,8 @@
             angle = this.startAngleRad + angle;
 
             return {
-                x:chart.plotLeft + center[0] + Math.cos(angle) * radius,
-                y:chart.plotTop + center[1] + Math.sin(angle) * radius
+                x: chart.plotLeft + center[0] + Math.cos(angle) * radius,
+                y: chart.plotTop + center[1] + Math.sin(angle) * radius
             };
 
         },
@@ -332,7 +332,7 @@
         /**
          * Find the path for plot bands along the radial axis
          */
-        getPlotBandPath:function (from, to, options) {
+        getPlotBandPath: function (from, to, options) {
             var center = this.center,
                 startAngleRad = this.startAngleRad,
                 fullRadius = center[2] / 2,
@@ -386,10 +386,10 @@
                     radii[0],
                     radii[0],
                     {
-                        start:start,
-                        end:end,
-                        innerR:pick(radii[1], radii[0] - radii[2]),
-                        open:open
+                        start: start,
+                        end: end,
+                        innerR: pick(radii[1], radii[0] - radii[2]),
+                        open: open
                     }
                 );
             }
@@ -400,7 +400,7 @@
         /**
          * Find the path for plot lines perpendicular to the radial axis.
          */
-        getPlotLinePath:function (value, reverse) {
+        getPlotLinePath: function (value, reverse) {
             var axis = this,
                 center = axis.center,
                 chart = axis.chart,
@@ -446,14 +446,14 @@
         /**
          * Find the position for the axis title, by default inside the gauge
          */
-        getTitlePosition:function () {
+        getTitlePosition: function () {
             var center = this.center,
                 chart = this.chart,
                 titleOptions = this.options.title;
 
             return {
-                x:chart.plotLeft + center[0] + (titleOptions.x || 0),
-                y:chart.plotTop + center[1] - ({ high:0.5, middle:0.25, low:0 }[titleOptions.align] *
+                x: chart.plotLeft + center[0] + (titleOptions.x || 0),
+                y: chart.plotTop + center[1] - ({ high: 0.5, middle: 0.25, low: 0 }[titleOptions.align] *
                     center[2]) + (titleOptions.y || 0)
             };
         }
@@ -562,7 +562,7 @@
             // Automatically rotated
             if (labelOptions.rotation === 'auto') {
                 label.attr({
-                    rotation:angle
+                    rotation: angle
                 });
 
                 // Vertically centered
@@ -585,7 +585,7 @@
                     align = 'center';
                 }
                 label.attr({
-                    align:align
+                    align: align
                 });
             }
 
@@ -630,21 +630,21 @@
      * Extend the default options with map options
      */
     defaultPlotOptions.arearange = merge(defaultPlotOptions.area, {
-        lineWidth:1,
-        marker:null,
-        threshold:null,
-        tooltip:{
-            pointFormat:'<span style="color:{series.color}">{series.name}</span>: <b>{point.low}</b> - <b>{point.high}</b><br/>'
+        lineWidth: 1,
+        marker: null,
+        threshold: null,
+        tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.low}</b> - <b>{point.high}</b><br/>'
         },
-        trackByArea:true,
-        dataLabels:{
-            verticalAlign:null,
-            xLow:0,
-            xHigh:0,
-            yLow:0,
-            yHigh:0
+        trackByArea: true,
+        dataLabels: {
+            verticalAlign: null,
+            xLow: 0,
+            xHigh: 0,
+            yLow: 0,
+            yHigh: 0
         },
-        shadow:false
+        shadow: false
     });
 
     /**
@@ -658,7 +658,7 @@
          *
          * @param {Object} options
          */
-        applyOptions:function (options, x) {
+        applyOptions: function (options, x) {
             var point = this,
                 series = point.series,
                 pointArrayMap = series.pointArrayMap,
@@ -708,7 +708,7 @@
         /**
          * Return a plain array for speedy calculation
          */
-        toYData:function () {
+        toYData: function () {
             return [this.low, this.high];
         }
     });
@@ -717,15 +717,15 @@
      * Add the series type
      */
     seriesTypes.arearange = Highcharts.extendClass(seriesTypes.area, {
-        type:'arearange',
-        pointArrayMap:['low', 'high'],
-        pointClass:RangePoint,
-        pointValKey:'low',
+        type: 'arearange',
+        pointArrayMap: ['low', 'high'],
+        pointClass: RangePoint,
+        pointValKey: 'low',
 
         /**
          * Translate data points from raw values x and y to plotX and plotY
          */
-        translate:function () {
+        translate: function () {
             var series = this,
                 yAxis = series.yAxis;
 
@@ -745,7 +745,7 @@
          * Extend the line series' getSegmentPath method by applying the segment
          * path to both lower and higher values of the range
          */
-        getSegmentPath:function (segment) {
+        getSegmentPath: function (segment) {
 
             var highSegment = [],
                 i = segment.length,
@@ -761,8 +761,8 @@
             while (i--) {
                 point = segment[i];
                 highSegment.push({
-                    plotX:point.plotX,
-                    plotY:point.plotHigh
+                    plotX: point.plotX,
+                    plotY: point.plotHigh
                 });
             }
 
@@ -772,7 +772,7 @@
                 if (step === true) {
                     step = 'left';
                 }
-                options.step = { left:'right', center:'center', right:'left' }[step]; // swap for reading in getSegmentPath
+                options.step = { left: 'right', center: 'center', right: 'left' }[step]; // swap for reading in getSegmentPath
             }
             higherPath = baseGetSegmentPath.call(this, highSegment);
             options.step = step;
@@ -791,7 +791,7 @@
          * Extend the basic drawDataLabels method by running it for both lower and higher
          * values.
          */
-        drawDataLabels:function () {
+        drawDataLabels: function () {
 
             var data = this.data,
                 length = data.length,
@@ -856,11 +856,11 @@
 
         },
 
-        alignDataLabel:seriesTypes.column.prototype.alignDataLabel,
+        alignDataLabel: seriesTypes.column.prototype.alignDataLabel,
 
-        getSymbol:seriesTypes.column.prototype.getSymbol,
+        getSymbol: seriesTypes.column.prototype.getSymbol,
 
-        drawPoints:noop
+        drawPoints: noop
     });
     /**
      * The AreaSplineRangeSeries class
@@ -872,26 +872,26 @@
      * AreaSplineRangeSeries object
      */
     seriesTypes.areasplinerange = extendClass(seriesTypes.arearange, {
-        type:'areasplinerange',
-        getPointSpline:seriesTypes.spline.prototype.getPointSpline
+        type: 'areasplinerange',
+        getPointSpline: seriesTypes.spline.prototype.getPointSpline
     });
     /**
      * The ColumnRangeSeries class
      */
     defaultPlotOptions.columnrange = merge(defaultPlotOptions.column, defaultPlotOptions.arearange, {
-        lineWidth:1,
-        pointRange:null
+        lineWidth: 1,
+        pointRange: null
     });
 
     /**
      * ColumnRangeSeries object
      */
     seriesTypes.columnrange = extendClass(seriesTypes.arearange, {
-        type:'columnrange',
+        type: 'columnrange',
         /**
          * Translate data points from raw values x and y to plotX and plotY
          */
-        translate:function () {
+        translate: function () {
             var series = this,
                 yAxis = series.yAxis,
                 plotHigh;
@@ -912,11 +912,11 @@
                 point.trackerArgs = shapeArgs;
             });
         },
-        drawGraph:noop,
-        pointAttrToOptions:colProto.pointAttrToOptions,
-        drawPoints:colProto.drawPoints,
-        drawTracker:colProto.drawTracker,
-        animate:colProto.animate
+        drawGraph: noop,
+        pointAttrToOptions: colProto.pointAttrToOptions,
+        drawPoints: colProto.drawPoints,
+        drawTracker: colProto.drawTracker,
+        animate: colProto.animate
     });
     /*
      * The GaugeSeries class
@@ -927,19 +927,19 @@
      * Extend the default options
      */
     defaultPlotOptions.gauge = merge(defaultPlotOptions.line, {
-        dataLabels:{
-            enabled:true,
-            y:15,
-            borderWidth:1,
-            borderColor:'silver',
-            borderRadius:3,
-            style:{
-                fontWeight:'bold'
+        dataLabels: {
+            enabled: true,
+            y: 15,
+            borderWidth: 1,
+            borderColor: 'silver',
+            borderRadius: 3,
+            style: {
+                fontWeight: 'bold'
             },
-            verticalAlign:'top',
-            zIndex:2
+            verticalAlign: 'top',
+            zIndex: 2
         },
-        dial:{
+        dial: {
             // radius: '80%',
             // backgroundColor: 'black',
             // borderColor: 'silver',
@@ -949,16 +949,16 @@
             // baseLength: '70%' // of radius
             // rearLength: '10%'
         },
-        pivot:{
+        pivot: {
             //radius: 5,
             //borderWidth: 0
             //borderColor: 'silver',
             //backgroundColor: 'black'
         },
-        tooltip:{
-            headerFormat:''
+        tooltip: {
+            headerFormat: ''
         },
-        showInLegend:false
+        showInLegend: false
     });
 
     /**
@@ -968,7 +968,7 @@
         /**
          * Don't do any hover colors or anything
          */
-        setState:function (state) {
+        setState: function (state) {
             this.state = state;
         }
     });
@@ -978,12 +978,12 @@
      * Add the series type
      */
     var GaugeSeries = {
-        type:'gauge',
-        pointClass:GaugePoint,
+        type: 'gauge',
+        pointClass: GaugePoint,
 
         // chart.angular will be set to true when a gauge series is present, and this will
         // be used on the axes
-        angular:true,
+        angular: true,
 
         /* *
          * Extend the bindAxes method by adding radial features to the axes
@@ -999,7 +999,7 @@
         /**
          * Calculate paths etc
          */
-        translate:function () {
+        translate: function () {
 
             var series = this,
                 yAxis = series.yAxis,
@@ -1018,7 +1018,7 @@
 
                 point.shapeType = 'path';
                 point.shapeArgs = {
-                    d:dialOptions.path || [
+                    d: dialOptions.path || [
                         'M',
                         -rearLength, -baseWidth / 2,
                         'L',
@@ -1029,9 +1029,9 @@
                         -rearLength, baseWidth / 2,
                         'z'
                     ],
-                    translateX:center[0],
-                    translateY:center[1],
-                    rotation:(yAxis.startAngleRad + yAxis.translate(point.y, null, null, null, true)) * 180 / Math.PI
+                    translateX: center[0],
+                    translateY: center[1],
+                    rotation: (yAxis.startAngleRad + yAxis.translate(point.y, null, null, null, true)) * 180 / Math.PI
                 };
 
                 // Positions for data label
@@ -1043,7 +1043,7 @@
         /**
          * Draw the points where each point is one needle
          */
-        drawPoints:function () {
+        drawPoints: function () {
 
             var series = this,
                 center = series.yAxis.center,
@@ -1065,10 +1065,10 @@
                 } else {
                     point.graphic = renderer[point.shapeType](shapeArgs)
                         .attr({
-                            stroke:dialOptions.borderColor || 'none',
-                            'stroke-width':dialOptions.borderWidth || 0,
-                            fill:dialOptions.backgroundColor || 'black',
-                            rotation:shapeArgs.rotation // required by VML when animation is false
+                            stroke: dialOptions.borderColor || 'none',
+                            'stroke-width': dialOptions.borderWidth || 0,
+                            fill: dialOptions.backgroundColor || 'black',
+                            rotation: shapeArgs.rotation // required by VML when animation is false
                         })
                         .add(series.group);
                 }
@@ -1077,15 +1077,15 @@
             // Add or move the pivot
             if (pivot) {
                 pivot.animate({ // #1235
-                    translateX:center[0],
-                    translateY:center[1]
+                    translateX: center[0],
+                    translateY: center[1]
                 });
             } else {
                 series.pivot = renderer.circle(0, 0, pick(pivotOptions.radius, 5))
                     .attr({
-                        'stroke-width':pivotOptions.borderWidth || 0,
-                        stroke:pivotOptions.borderColor || 'silver',
-                        fill:pivotOptions.backgroundColor || 'black'
+                        'stroke-width': pivotOptions.borderWidth || 0,
+                        stroke: pivotOptions.borderColor || 'silver',
+                        fill: pivotOptions.backgroundColor || 'black'
                     })
                     .translate(center[0], center[1])
                     .add(series.group);
@@ -1095,7 +1095,7 @@
         /**
          * Animate the arrow up from startAngle
          */
-        animate:function () {
+        animate: function () {
             var series = this;
 
             each(series.points, function (point) {
@@ -1104,12 +1104,12 @@
                 if (graphic) {
                     // start value
                     graphic.attr({
-                        rotation:series.yAxis.startAngleRad * 180 / Math.PI
+                        rotation: series.yAxis.startAngleRad * 180 / Math.PI
                     });
 
                     // animate
                     graphic.animate({
-                        rotation:point.shapeArgs.rotation
+                        rotation: point.shapeArgs.rotation
                     }, series.options.animation);
                 }
             });
@@ -1118,7 +1118,7 @@
             series.animate = null;
         },
 
-        render:function () {
+        render: function () {
             this.group = this.plotGroup(
                 'group',
                 'series',
@@ -1130,8 +1130,8 @@
             this.group.clip(this.chart.clipRect);
         },
 
-        setData:seriesTypes.pie.prototype.setData,
-        drawTracker:seriesTypes.column.prototype.drawTracker
+        setData: seriesTypes.pie.prototype.setData,
+        drawTracker: seriesTypes.column.prototype.drawTracker
     };
     seriesTypes.gauge = Highcharts.extendClass(seriesTypes.line, GaugeSeries);
     /**
@@ -1379,10 +1379,10 @@
 
                     // Scale down the group and place it in the center
                     attribs = {
-                        translateX:center[0] + plotLeft,
-                        translateY:center[1] + plotTop,
-                        scaleX:0,
-                        scaleY:0
+                        translateX: center[0] + plotLeft,
+                        translateY: center[1] + plotTop,
+                        scaleX: 0,
+                        scaleY: 0
                     };
 
                     group.attr(attribs);
@@ -1394,10 +1394,10 @@
                     // Run the animation
                 } else {
                     attribs = {
-                        translateX:plotLeft,
-                        translateY:plotTop,
-                        scaleX:1,
-                        scaleY:1
+                        translateX: plotLeft,
+                        translateY: plotTop,
+                        scaleX: 1,
+                        scaleY: 1
                     };
                     group.animate(attribs, animation);
                     if (markerGroup) {
@@ -1428,8 +1428,8 @@
 
         if (this.chart.polar) {
             extend(this.xAxis, {
-                tooltipLen:360, // degrees are the resolution unit of the tooltipPoints array
-                tooltipPosName:'deg'
+                tooltipLen: 360, // degrees are the resolution unit of the tooltipPoints array
+                tooltipPosName: 'deg'
             });
         }
 
@@ -1467,15 +1467,15 @@
                 start = point.barX + startAngleRad;
                 point.shapeType = 'path';
                 point.shapeArgs = {
-                    d:renderer.symbols.arc(
+                    d: renderer.symbols.arc(
                         center[0],
                         center[1],
                         len - point.plotY,
                         null,
                         {
-                            start:start,
-                            end:start + point.pointWidth,
-                            innerR:len - pick(point.yBottom, len)
+                            start: start,
+                            end: start + point.pointWidth,
+                            innerR: len - pick(point.yBottom, len)
                         }
                     )
                 };
@@ -1556,8 +1556,8 @@
     wrap(mouseTrackerProto, 'getMouseCoordinates', function (proceed, e) {
         var chart = this.chart,
             ret = {
-                xAxis:[],
-                yAxis:[]
+                xAxis: [],
+                yAxis: []
             };
 
         if (chart.polar) {
@@ -1569,8 +1569,8 @@
                     y = e.chartY - center[1] - chart.plotTop;
 
                 ret[isXAxis ? 'xAxis' : 'yAxis'].push({
-                    axis:axis,
-                    value:axis.translate(
+                    axis: axis,
+                    value: axis.translate(
                         isXAxis ?
                             Math.PI - Math.atan2(x, y) : // angle
                             Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)), // distance from center

@@ -6,40 +6,40 @@ import graficos.inter.Titulo;
 
 import java.util.List;
 
-class HighChartEixo implements Eixo {
+public class HighChartEixo implements Eixo {
 
-    public List<Categoria> categorias;
-    public Titulo titulo;
+  public List<Categoria> categorias;
+  public Titulo titulo;
 
-    public HighChartEixo(List<Categoria> categorias) {
-        this.categorias = categorias;
-    }
+  public HighChartEixo(List<Categoria> categorias) {
+    this.categorias = categorias;
+  }
 
-    HighChartEixo(Titulo titulo) {
-        this.categorias = categorias;
-        this.titulo = titulo;
-    }
+  HighChartEixo(Titulo titulo) {
+    this.categorias = categorias;
+    this.titulo = titulo;
+  }
 
-    public HighChartEixo() {
-    }
+  public HighChartEixo() {
+  }
 
-    public Eixo adicionar(Categoria categoria) {
-        categorias.add(categoria);
-        return this;
-    }
+  public Eixo adicionar(Categoria categoria) {
+    categorias.add(categoria);
+    return this;
+  }
 
-    public Eixo remover(Categoria categoria) {
-        categorias.remove(categoria);
-        return this;
-    }
+  public Eixo remover(Categoria categoria) {
+    categorias.remove(categoria);
+    return this;
+  }
 
-    @Override
-    public List<Categoria> categorias() {
-        return categorias;
-    }
+  @Override
+  public List<Categoria> categorias() {
+    return categorias;
+  }
 
-    @Override
-    public Titulo titulo() {
-        return titulo;
-    }
+  @Override
+  public Titulo titulo() {
+    return titulo;
+  }
 }

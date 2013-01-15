@@ -5,19 +5,19 @@
     <li>
     ${perspectiva.descricao}
         <ul>
-            #{list items: perspectiva.objetivos, as:'objetivo'}
-                <li>
-                ${objetivo.descricao}
-                    <ul>
-                        #{list items:objetivo.indicadores, as: 'indicador'}
-                            <li>
-                                <a href="@{Indicadores.visualizar(indicador.id)}">${indicador.descricao}</a>
-                            </li>
-                        #{/list}
-                    </ul>
+          #{list items: perspectiva.objetivos, as:'objetivo'}
+              <li>
+              ${objetivo.descricao}
+                  <ul>
+                    #{list items:objetivo.indicadores, as: 'indicador'}
+                        <li>
+                            <a href="@{Indicadores.visualizar(indicador.id)}">${indicador.descricao}</a>
+                        </li>
+                    #{/list}
+                  </ul>
 
-                </li>
-            #{/list}
+              </li>
+          #{/list}
         </ul>
     </li>
 

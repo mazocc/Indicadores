@@ -4,31 +4,48 @@
 <script type="text/javascript">
     var chart;
     $(document).ready(function () {
-        chart = new Highcharts.Chart({
-            chart:{
-                renderTo:'grafico',
-                type:'column'
-            },
-            title:{
-                text:'${indicador.descricao}'
-            },
-            xAxis:{
-                categories:['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
-            },
-            yAxis:{
-                title:{
-                    text:'Valores'
-                }
-            },
-            series:[
-                {
-                    data:[1, 0, 4, 5]
-                },
-                {
-                    data:[5, 7, 3, 3]
-                }
-            ]
-        });
+        var jsonData = #{jsRoute @Indicadores.visualizarJson(':id') /};
+        $.ajax({
+            url: jsonData.url({id: ${indicador.id}}),
+            method: jsonData.method
+        }).done(function (data) {
+                    var cats = new Array();
+                    var series = new Array();
+                    for (x in data.eixoX.categorias) {
+                        cats.push(data.eixoX.categorias[x].descricao);
+                    }
+
+                    for (x in data.series) {
+                        var obj = {
+                            name: data.series[x].nome,
+                            data: data.series[x].valores
+                        }
+                        series.push(obj);
+                    }
+
+
+                    chart = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'grafico',
+                            type: data.tipoGrafico
+                        },
+                        title: {
+                            text: data.titulo.titulo
+                        },
+                        xAxis: {
+                            categories: cats
+                        },
+                        yAxis: {
+                            title: {
+                                text: data.eixoY.titulo.titulo
+                            }
+                        },
+                        series: series
+                    });
+
+                });
+
+
     });
 </script>
 #{/set}

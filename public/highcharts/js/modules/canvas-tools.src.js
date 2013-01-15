@@ -19,149 +19,149 @@ function RGBColor(color_string) {
     // before getting into regexps, try simple matches
     // and overwrite the input
     var simple_colors = {
-        aliceblue:'f0f8ff',
-        antiquewhite:'faebd7',
-        aqua:'00ffff',
-        aquamarine:'7fffd4',
-        azure:'f0ffff',
-        beige:'f5f5dc',
-        bisque:'ffe4c4',
-        black:'000000',
-        blanchedalmond:'ffebcd',
-        blue:'0000ff',
-        blueviolet:'8a2be2',
-        brown:'a52a2a',
-        burlywood:'deb887',
-        cadetblue:'5f9ea0',
-        chartreuse:'7fff00',
-        chocolate:'d2691e',
-        coral:'ff7f50',
-        cornflowerblue:'6495ed',
-        cornsilk:'fff8dc',
-        crimson:'dc143c',
-        cyan:'00ffff',
-        darkblue:'00008b',
-        darkcyan:'008b8b',
-        darkgoldenrod:'b8860b',
-        darkgray:'a9a9a9',
-        darkgreen:'006400',
-        darkkhaki:'bdb76b',
-        darkmagenta:'8b008b',
-        darkolivegreen:'556b2f',
-        darkorange:'ff8c00',
-        darkorchid:'9932cc',
-        darkred:'8b0000',
-        darksalmon:'e9967a',
-        darkseagreen:'8fbc8f',
-        darkslateblue:'483d8b',
-        darkslategray:'2f4f4f',
-        darkturquoise:'00ced1',
-        darkviolet:'9400d3',
-        deeppink:'ff1493',
-        deepskyblue:'00bfff',
-        dimgray:'696969',
-        dodgerblue:'1e90ff',
-        feldspar:'d19275',
-        firebrick:'b22222',
-        floralwhite:'fffaf0',
-        forestgreen:'228b22',
-        fuchsia:'ff00ff',
-        gainsboro:'dcdcdc',
-        ghostwhite:'f8f8ff',
-        gold:'ffd700',
-        goldenrod:'daa520',
-        gray:'808080',
-        green:'008000',
-        greenyellow:'adff2f',
-        honeydew:'f0fff0',
-        hotpink:'ff69b4',
-        indianred:'cd5c5c',
-        indigo:'4b0082',
-        ivory:'fffff0',
-        khaki:'f0e68c',
-        lavender:'e6e6fa',
-        lavenderblush:'fff0f5',
-        lawngreen:'7cfc00',
-        lemonchiffon:'fffacd',
-        lightblue:'add8e6',
-        lightcoral:'f08080',
-        lightcyan:'e0ffff',
-        lightgoldenrodyellow:'fafad2',
-        lightgrey:'d3d3d3',
-        lightgreen:'90ee90',
-        lightpink:'ffb6c1',
-        lightsalmon:'ffa07a',
-        lightseagreen:'20b2aa',
-        lightskyblue:'87cefa',
-        lightslateblue:'8470ff',
-        lightslategray:'778899',
-        lightsteelblue:'b0c4de',
-        lightyellow:'ffffe0',
-        lime:'00ff00',
-        limegreen:'32cd32',
-        linen:'faf0e6',
-        magenta:'ff00ff',
-        maroon:'800000',
-        mediumaquamarine:'66cdaa',
-        mediumblue:'0000cd',
-        mediumorchid:'ba55d3',
-        mediumpurple:'9370d8',
-        mediumseagreen:'3cb371',
-        mediumslateblue:'7b68ee',
-        mediumspringgreen:'00fa9a',
-        mediumturquoise:'48d1cc',
-        mediumvioletred:'c71585',
-        midnightblue:'191970',
-        mintcream:'f5fffa',
-        mistyrose:'ffe4e1',
-        moccasin:'ffe4b5',
-        navajowhite:'ffdead',
-        navy:'000080',
-        oldlace:'fdf5e6',
-        olive:'808000',
-        olivedrab:'6b8e23',
-        orange:'ffa500',
-        orangered:'ff4500',
-        orchid:'da70d6',
-        palegoldenrod:'eee8aa',
-        palegreen:'98fb98',
-        paleturquoise:'afeeee',
-        palevioletred:'d87093',
-        papayawhip:'ffefd5',
-        peachpuff:'ffdab9',
-        peru:'cd853f',
-        pink:'ffc0cb',
-        plum:'dda0dd',
-        powderblue:'b0e0e6',
-        purple:'800080',
-        red:'ff0000',
-        rosybrown:'bc8f8f',
-        royalblue:'4169e1',
-        saddlebrown:'8b4513',
-        salmon:'fa8072',
-        sandybrown:'f4a460',
-        seagreen:'2e8b57',
-        seashell:'fff5ee',
-        sienna:'a0522d',
-        silver:'c0c0c0',
-        skyblue:'87ceeb',
-        slateblue:'6a5acd',
-        slategray:'708090',
-        snow:'fffafa',
-        springgreen:'00ff7f',
-        steelblue:'4682b4',
-        tan:'d2b48c',
-        teal:'008080',
-        thistle:'d8bfd8',
-        tomato:'ff6347',
-        turquoise:'40e0d0',
-        violet:'ee82ee',
-        violetred:'d02090',
-        wheat:'f5deb3',
-        white:'ffffff',
-        whitesmoke:'f5f5f5',
-        yellow:'ffff00',
-        yellowgreen:'9acd32'
+        aliceblue: 'f0f8ff',
+        antiquewhite: 'faebd7',
+        aqua: '00ffff',
+        aquamarine: '7fffd4',
+        azure: 'f0ffff',
+        beige: 'f5f5dc',
+        bisque: 'ffe4c4',
+        black: '000000',
+        blanchedalmond: 'ffebcd',
+        blue: '0000ff',
+        blueviolet: '8a2be2',
+        brown: 'a52a2a',
+        burlywood: 'deb887',
+        cadetblue: '5f9ea0',
+        chartreuse: '7fff00',
+        chocolate: 'd2691e',
+        coral: 'ff7f50',
+        cornflowerblue: '6495ed',
+        cornsilk: 'fff8dc',
+        crimson: 'dc143c',
+        cyan: '00ffff',
+        darkblue: '00008b',
+        darkcyan: '008b8b',
+        darkgoldenrod: 'b8860b',
+        darkgray: 'a9a9a9',
+        darkgreen: '006400',
+        darkkhaki: 'bdb76b',
+        darkmagenta: '8b008b',
+        darkolivegreen: '556b2f',
+        darkorange: 'ff8c00',
+        darkorchid: '9932cc',
+        darkred: '8b0000',
+        darksalmon: 'e9967a',
+        darkseagreen: '8fbc8f',
+        darkslateblue: '483d8b',
+        darkslategray: '2f4f4f',
+        darkturquoise: '00ced1',
+        darkviolet: '9400d3',
+        deeppink: 'ff1493',
+        deepskyblue: '00bfff',
+        dimgray: '696969',
+        dodgerblue: '1e90ff',
+        feldspar: 'd19275',
+        firebrick: 'b22222',
+        floralwhite: 'fffaf0',
+        forestgreen: '228b22',
+        fuchsia: 'ff00ff',
+        gainsboro: 'dcdcdc',
+        ghostwhite: 'f8f8ff',
+        gold: 'ffd700',
+        goldenrod: 'daa520',
+        gray: '808080',
+        green: '008000',
+        greenyellow: 'adff2f',
+        honeydew: 'f0fff0',
+        hotpink: 'ff69b4',
+        indianred: 'cd5c5c',
+        indigo: '4b0082',
+        ivory: 'fffff0',
+        khaki: 'f0e68c',
+        lavender: 'e6e6fa',
+        lavenderblush: 'fff0f5',
+        lawngreen: '7cfc00',
+        lemonchiffon: 'fffacd',
+        lightblue: 'add8e6',
+        lightcoral: 'f08080',
+        lightcyan: 'e0ffff',
+        lightgoldenrodyellow: 'fafad2',
+        lightgrey: 'd3d3d3',
+        lightgreen: '90ee90',
+        lightpink: 'ffb6c1',
+        lightsalmon: 'ffa07a',
+        lightseagreen: '20b2aa',
+        lightskyblue: '87cefa',
+        lightslateblue: '8470ff',
+        lightslategray: '778899',
+        lightsteelblue: 'b0c4de',
+        lightyellow: 'ffffe0',
+        lime: '00ff00',
+        limegreen: '32cd32',
+        linen: 'faf0e6',
+        magenta: 'ff00ff',
+        maroon: '800000',
+        mediumaquamarine: '66cdaa',
+        mediumblue: '0000cd',
+        mediumorchid: 'ba55d3',
+        mediumpurple: '9370d8',
+        mediumseagreen: '3cb371',
+        mediumslateblue: '7b68ee',
+        mediumspringgreen: '00fa9a',
+        mediumturquoise: '48d1cc',
+        mediumvioletred: 'c71585',
+        midnightblue: '191970',
+        mintcream: 'f5fffa',
+        mistyrose: 'ffe4e1',
+        moccasin: 'ffe4b5',
+        navajowhite: 'ffdead',
+        navy: '000080',
+        oldlace: 'fdf5e6',
+        olive: '808000',
+        olivedrab: '6b8e23',
+        orange: 'ffa500',
+        orangered: 'ff4500',
+        orchid: 'da70d6',
+        palegoldenrod: 'eee8aa',
+        palegreen: '98fb98',
+        paleturquoise: 'afeeee',
+        palevioletred: 'd87093',
+        papayawhip: 'ffefd5',
+        peachpuff: 'ffdab9',
+        peru: 'cd853f',
+        pink: 'ffc0cb',
+        plum: 'dda0dd',
+        powderblue: 'b0e0e6',
+        purple: '800080',
+        red: 'ff0000',
+        rosybrown: 'bc8f8f',
+        royalblue: '4169e1',
+        saddlebrown: '8b4513',
+        salmon: 'fa8072',
+        sandybrown: 'f4a460',
+        seagreen: '2e8b57',
+        seashell: 'fff5ee',
+        sienna: 'a0522d',
+        silver: 'c0c0c0',
+        skyblue: '87ceeb',
+        slateblue: '6a5acd',
+        slategray: '708090',
+        snow: 'fffafa',
+        springgreen: '00ff7f',
+        steelblue: '4682b4',
+        tan: 'd2b48c',
+        teal: '008080',
+        thistle: 'd8bfd8',
+        tomato: 'ff6347',
+        turquoise: '40e0d0',
+        violet: 'ee82ee',
+        violetred: 'd02090',
+        wheat: 'f5deb3',
+        white: 'ffffff',
+        whitesmoke: 'f5f5f5',
+        yellow: 'ffff00',
+        yellowgreen: '9acd32'
     };
     for (var key in simple_colors) {
         if (color_string == key) {
@@ -173,9 +173,9 @@ function RGBColor(color_string) {
     // array of color definition objects
     var color_defs = [
         {
-            re:/^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/,
-            example:['rgb(123, 234, 45)', 'rgb(255,234,245)'],
-            process:function (bits) {
+            re: /^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/,
+            example: ['rgb(123, 234, 45)', 'rgb(255,234,245)'],
+            process: function (bits) {
                 return [
                     parseInt(bits[1]),
                     parseInt(bits[2]),
@@ -184,9 +184,9 @@ function RGBColor(color_string) {
             }
         },
         {
-            re:/^(\w{2})(\w{2})(\w{2})$/,
-            example:['#00ff00', '336699'],
-            process:function (bits) {
+            re: /^(\w{2})(\w{2})(\w{2})$/,
+            example: ['#00ff00', '336699'],
+            process: function (bits) {
                 return [
                     parseInt(bits[1], 16),
                     parseInt(bits[2], 16),
@@ -195,9 +195,9 @@ function RGBColor(color_string) {
             }
         },
         {
-            re:/^(\w{1})(\w{1})(\w{1})$/,
-            example:['#fb0', 'f0f'],
-            process:function (bits) {
+            re: /^(\w{1})(\w{1})(\w{1})$/,
+            example: ['#fb0', 'f0f'],
+            process: function (bits) {
                 return [
                     parseInt(bits[1] + bits[1], 16),
                     parseInt(bits[2] + bits[2], 16),
@@ -400,7 +400,7 @@ if (!Array.prototype.indexOf) {
                     this.viewPorts = [];
                 }
                 this.SetCurrent = function (width, height) {
-                    this.viewPorts.push({ width:width, height:height });
+                    this.viewPorts.push({ width: width, height: height });
                 }
                 this.RemoveCurrent = function () {
                     this.viewPorts.pop();
@@ -509,7 +509,7 @@ if (!Array.prototype.indexOf) {
             // color extensions
             this.Color = {
                 // augment the current color value with the opacity
-                addOpacity:function (opacity) {
+                addOpacity: function (opacity) {
                     var newValue = that.value;
                     if (opacity != null && opacity != '') {
                         var color = new RGBColor(that.value);
@@ -524,16 +524,16 @@ if (!Array.prototype.indexOf) {
             // definition extensions
             this.Definition = {
                 // get the definition from the definitions table
-                getDefinition:function () {
+                getDefinition: function () {
                     var name = that.value.replace(/^(url\()?#([^\)]+)\)?$/, '$2');
                     return svg.Definitions[name];
                 },
 
-                isUrl:function () {
+                isUrl: function () {
                     return that.value.indexOf('url(') == 0
                 },
 
-                getFillStyle:function (e) {
+                getFillStyle: function (e) {
                     var def = this.getDefinition();
 
                     // gradient
@@ -552,11 +552,11 @@ if (!Array.prototype.indexOf) {
 
             // length extensions
             this.Length = {
-                DPI:function (viewPort) {
+                DPI: function (viewPort) {
                     return 96.0; // TODO: compute?
                 },
 
-                EM:function (viewPort) {
+                EM: function (viewPort) {
                     var em = 12;
 
                     var fontSize = new svg.Property('fontSize', svg.Font.Parse(svg.ctx.font).fontSize);
@@ -566,7 +566,7 @@ if (!Array.prototype.indexOf) {
                 },
 
                 // get the length as pixels
-                toPixels:function (viewPort) {
+                toPixels: function (viewPort) {
                     if (!that.hasValue()) return 0;
                     var s = that.value + '';
                     if (s.match(/em$/)) return that.numValue() * this.EM(viewPort);
@@ -585,7 +585,7 @@ if (!Array.prototype.indexOf) {
             // time extensions
             this.Time = {
                 // get the time as milliseconds
-                toMilliseconds:function () {
+                toMilliseconds: function () {
                     if (!that.hasValue()) return 0;
                     var s = that.value + '';
                     if (s.match(/s$/)) return that.numValue() * 1000;
@@ -597,7 +597,7 @@ if (!Array.prototype.indexOf) {
             // angle extensions
             this.Angle = {
                 // get the angle as radians
-                toRadians:function () {
+                toRadians: function () {
                     if (!that.hasValue()) return 0;
                     var s = that.value + '';
                     if (s.match(/deg$/)) return that.numValue() * (Math.PI / 180.0);
@@ -617,12 +617,12 @@ if (!Array.prototype.indexOf) {
             this.CreateFont = function (fontStyle, fontVariant, fontWeight, fontSize, fontFamily, inherit) {
                 var f = inherit != null ? this.Parse(inherit) : this.CreateFont('', '', '', '', '', svg.ctx.font);
                 return {
-                    fontFamily:fontFamily || f.fontFamily,
-                    fontSize:fontSize || f.fontSize,
-                    fontStyle:fontStyle || f.fontStyle,
-                    fontWeight:fontWeight || f.fontWeight,
-                    fontVariant:fontVariant || f.fontVariant,
-                    toString:function () {
+                    fontFamily: fontFamily || f.fontFamily,
+                    fontSize: fontSize || f.fontSize,
+                    fontStyle: fontStyle || f.fontStyle,
+                    fontWeight: fontWeight || f.fontWeight,
+                    fontVariant: fontVariant || f.fontVariant,
+                    toString: function () {
                         return [this.fontStyle, this.fontVariant, this.fontWeight, this.fontSize, this.fontFamily].join(' ')
                     }
                 }
@@ -632,7 +632,7 @@ if (!Array.prototype.indexOf) {
             this.Parse = function (s) {
                 var f = {};
                 var d = svg.trim(svg.compressSpaces(s || '')).split(' ');
-                var set = { fontSize:false, fontStyle:false, fontWeight:false, fontVariant:false }
+                var set = { fontSize: false, fontStyle: false, fontWeight: false, fontVariant: false }
                 var ff = '';
                 for (var i = 0; i < d.length; i++) {
                     if (!set.fontStyle && that.Styles.indexOf(d[i]) != -1) {
@@ -2914,16 +2914,16 @@ if (!Array.prototype.indexOf) {
             }
 
             this.onclick = function (x, y) {
-                this.events.push({ type:'onclick', x:x, y:y,
-                    run:function (e) {
+                this.events.push({ type: 'onclick', x: x, y: y,
+                    run: function (e) {
                         if (e.onclick) e.onclick();
                     }
                 });
             }
 
             this.onmousemove = function (x, y) {
-                this.events.push({ type:'onmousemove', x:x, y:y,
-                    run:function (e) {
+                this.events.push({ type: 'onmousemove', x: x, y: y,
+                    run: function (e) {
                         if (e.onmousemove) e.onmousemove();
                     }
                 });
@@ -2970,14 +2970,14 @@ if (!Array.prototype.indexOf) {
 if (CanvasRenderingContext2D) {
     CanvasRenderingContext2D.prototype.drawSvg = function (s, dx, dy, dw, dh) {
         canvg(this.canvas, s, {
-            ignoreMouse:true,
-            ignoreAnimation:true,
-            ignoreDimensions:true,
-            ignoreClear:true,
-            offsetX:dx,
-            offsetY:dy,
-            scaleWidth:dw,
-            scaleHeight:dh
+            ignoreMouse: true,
+            ignoreAnimation: true,
+            ignoreDimensions: true,
+            ignoreClear: true,
+            offsetX: dx,
+            offsetY: dy,
+            scaleWidth: dw,
+            scaleHeight: dh
         });
     }
 }
@@ -3015,11 +3015,11 @@ if (CanvasRenderingContext2D) {
 
     // Add additional functionality:
     extend(CanVGRenderer.prototype, {
-        create:function (chart, container, chartWidth, chartHeight) {
+        create: function (chart, container, chartWidth, chartHeight) {
             this.setContainer(container, chartWidth, chartHeight);
             this.configure(chart);
         },
-        setContainer:function (container, chartWidth, chartHeight) {
+        setContainer: function (container, chartWidth, chartHeight) {
             var containerStyle = container.style,
                 containerParent = container.parentNode,
                 containerLeft = containerStyle.left,
@@ -3027,18 +3027,18 @@ if (CanvasRenderingContext2D) {
                 containerOffsetWidth = container.offsetWidth,
                 containerOffsetHeight = container.offsetHeight,
                 canvas,
-                initialHiddenStyle = { visibility:HIDDEN, position:ABSOLUTE };
+                initialHiddenStyle = { visibility: HIDDEN, position: ABSOLUTE };
 
             this.init.apply(this, [container, chartWidth, chartHeight]);
 
             // add the canvas above it
             canvas = createElement('canvas', {
-                width:containerOffsetWidth,
-                height:containerOffsetHeight
+                width: containerOffsetWidth,
+                height: containerOffsetHeight
             }, {
-                position:RELATIVE,
-                left:containerLeft,
-                top:containerTop
+                position: RELATIVE,
+                left: containerLeft,
+                top: containerTop
             }, container);
             this.canvas = canvas;
 
@@ -3050,12 +3050,12 @@ if (CanvasRenderingContext2D) {
 
             // Move away the svg node to a new div inside the container's parent so we can hide it.
             var hiddenSvg = createElement(DIV, {
-                width:containerOffsetWidth,
-                height:containerOffsetHeight
+                width: containerOffsetWidth,
+                height: containerOffsetHeight
             }, {
-                visibility:HIDDEN,
-                left:containerLeft,
-                top:containerTop
+                visibility: HIDDEN,
+                left: containerLeft,
+                top: containerTop
             }, containerParent);
             this.hiddenSvg = hiddenSvg;
             hiddenSvg.appendChild(this.box);
@@ -3064,7 +3064,7 @@ if (CanvasRenderingContext2D) {
         /**
          * Configures the renderer with the chart. Attach a listener to the event tooltipRefresh.
          **/
-        configure:function (chart) {
+        configure: function (chart) {
             var renderer = this,
                 options = chart.options.tooltip,
                 borderWidth = options.borderWidth,
@@ -3075,25 +3075,25 @@ if (CanvasRenderingContext2D) {
 
             // Add border styling from options to the style
             tooltipDivStyle = merge(tooltipDivStyle, {
-                padding:padding + PX,
-                'background-color':options.backgroundColor,
-                'border-style':'solid',
-                'border-width':borderWidth + PX,
-                'border-radius':options.borderRadius + PX
+                padding: padding + PX,
+                'background-color': options.backgroundColor,
+                'border-style': 'solid',
+                'border-width': borderWidth + PX,
+                'border-radius': options.borderRadius + PX
             });
 
             // Optionally add shadow
             if (options.shadow) {
                 tooltipDivStyle = merge(tooltipDivStyle, {
-                    'box-shadow':'1px 1px 3px gray', // w3c
-                    '-webkit-box-shadow':'1px 1px 3px gray' // webkit
+                    'box-shadow': '1px 1px 3px gray', // w3c
+                    '-webkit-box-shadow': '1px 1px 3px gray' // webkit
                 });
             }
             css(tooltipDiv, tooltipDivStyle);
 
             // Set simple style on the line
             css(tooltipLine, {
-                'border-left':'1px solid darkgray'
+                'border-left': '1px solid darkgray'
             });
 
             // This event is triggered when a new tooltip should be shown
@@ -3107,21 +3107,21 @@ if (CanvasRenderingContext2D) {
                 tooltipDiv.innerHTML = args.text;
 
                 // Compute the best position for the tooltip based on the divs size and container size.
-                position = chart.tooltip.getPosition(tooltipDiv.offsetWidth, tooltipDiv.offsetHeight, {plotX:args.x, plotY:args.y});
+                position = chart.tooltip.getPosition(tooltipDiv.offsetWidth, tooltipDiv.offsetHeight, {plotX: args.x, plotY: args.y});
 
                 css(tooltipDiv, {
-                    visibility:VISIBLE,
-                    left:position.x + PX,
-                    top:position.y + PX,
-                    'border-color':args.borderColor
+                    visibility: VISIBLE,
+                    left: position.x + PX,
+                    top: position.y + PX,
+                    'border-color': args.borderColor
                 });
 
                 // Position the tooltip line
                 css(tooltipLine, {
-                    visibility:VISIBLE,
-                    left:offsetLeft + args.x + PX,
-                    top:offsetTop + chart.plotTop + PX,
-                    height:chart.plotHeight + PX
+                    visibility: VISIBLE,
+                    left: offsetLeft + args.x + PX,
+                    top: offsetTop + chart.plotTop + PX,
+                    height: chart.plotHeight + PX
                 });
 
                 // This timeout hides the tooltip after 3 seconds
@@ -3132,8 +3132,8 @@ if (CanvasRenderingContext2D) {
 
                 // Start a new timer that hides tooltip and line
                 renderer.ttTimer = setTimeout(function () {
-                    css(tooltipDiv, { visibility:HIDDEN });
-                    css(tooltipLine, { visibility:HIDDEN });
+                    css(tooltipDiv, { visibility: HIDDEN });
+                    css(tooltipLine, { visibility: HIDDEN });
                 }, 3000);
             });
         },
@@ -3141,7 +3141,7 @@ if (CanvasRenderingContext2D) {
         /**
          * Extend SVGRenderer.destroy to also destroy the elements added by CanVGRenderer.
          */
-        destroy:function () {
+        destroy: function () {
             var renderer = this;
 
             // Remove the canvas
@@ -3168,7 +3168,7 @@ if (CanvasRenderingContext2D) {
          *
          * @param {Object} color The color or config object
          */
-        color:function (color, elem, prop) {
+        color: function (color, elem, prop) {
             if (color && color.linearGradient) {
                 // Pick the end color and forward to base implementation
                 color = color.stops[color.stops.length - 1][1];
@@ -3179,7 +3179,7 @@ if (CanvasRenderingContext2D) {
         /**
          * Draws the SVG on the canvas or adds a draw invokation to the deferred list.
          */
-        draw:function () {
+        draw: function () {
             var renderer = this;
             window.canvg(renderer.canvas, renderer.hiddenSvg.innerHTML);
         }

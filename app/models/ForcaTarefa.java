@@ -10,16 +10,16 @@ import java.util.List;
 @Entity
 public class ForcaTarefa extends Model {
 
-    public String descricao;
+  public String descricao;
 
-    @ManyToMany
-    public List<Pessoa> pessoas;
+  @ManyToMany
+  public List<Pessoa> pessoas;
 
-    @OneToMany(mappedBy = "forcaTarefa")
-    List<Indicador> indicadores;
+  @OneToMany(mappedBy = "forcaTarefa")
+  List<Indicador> indicadores;
 
-    @Override
-    public String toString() {
-        return id + " - " + descricao;
-    }
+  @Override
+  public String toString() {
+    return id + " - " + descricao;
+  }
 }

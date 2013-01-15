@@ -41,58 +41,58 @@
 
     // Add language
     extend(defaultOptions.lang, {
-        downloadPNG:'Download PNG image',
-        downloadJPEG:'Download JPEG image',
-        downloadPDF:'Download PDF document',
-        downloadSVG:'Download SVG vector image',
-        exportButtonTitle:'Export to raster or vector image',
-        printButtonTitle:'Print the chart'
+        downloadPNG: 'Download PNG image',
+        downloadJPEG: 'Download JPEG image',
+        downloadPDF: 'Download PDF document',
+        downloadSVG: 'Download SVG vector image',
+        exportButtonTitle: 'Export to raster or vector image',
+        printButtonTitle: 'Print the chart'
     });
 
 // Buttons and menus are collected in a separate config option set called 'navigation'.
 // This can be extended later to add control buttons like zoom and pan right click menus.
     defaultOptions.navigation = {
-        menuStyle:{
-            border:'1px solid #A0A0A0',
-            background:'#FFFFFF'
+        menuStyle: {
+            border: '1px solid #A0A0A0',
+            background: '#FFFFFF'
         },
-        menuItemStyle:{
-            padding:'0 5px',
-            background:NONE,
-            color:'#303030',
-            fontSize:isTouchDevice ? '14px' : '11px'
+        menuItemStyle: {
+            padding: '0 5px',
+            background: NONE,
+            color: '#303030',
+            fontSize: isTouchDevice ? '14px' : '11px'
         },
-        menuItemHoverStyle:{
-            background:'#4572A5',
-            color:'#FFFFFF'
+        menuItemHoverStyle: {
+            background: '#4572A5',
+            color: '#FFFFFF'
         },
 
-        buttonOptions:{
-            align:'right',
-            backgroundColor:{
-                linearGradient:[0, 0, 0, 20],
-                stops:[
+        buttonOptions: {
+            align: 'right',
+            backgroundColor: {
+                linearGradient: [0, 0, 0, 20],
+                stops: [
                     [0.4, '#F7F7F7'],
                     [0.6, '#E3E3E3']
                 ]
             },
-            borderColor:'#B0B0B0',
-            borderRadius:3,
-            borderWidth:1,
+            borderColor: '#B0B0B0',
+            borderRadius: 3,
+            borderWidth: 1,
             //enabled: true,
-            height:20,
-            hoverBorderColor:'#909090',
-            hoverSymbolFill:'#81A7CF',
-            hoverSymbolStroke:'#4572A5',
-            symbolFill:'#E0E0E0',
+            height: 20,
+            hoverBorderColor: '#909090',
+            hoverSymbolFill: '#81A7CF',
+            hoverSymbolStroke: '#4572A5',
+            symbolFill: '#E0E0E0',
             //symbolSize: 12,
-            symbolStroke:'#A0A0A0',
+            symbolStroke: '#A0A0A0',
             //symbolStrokeWidth: 1,
-            symbolX:11.5,
-            symbolY:10.5,
-            verticalAlign:'top',
-            width:24,
-            y:10
+            symbolX: 11.5,
+            symbolY: 10.5,
+            verticalAlign: 'top',
+            width: 24,
+            y: 10
         }
     };
 
@@ -101,46 +101,46 @@
     defaultOptions.exporting = {
         //enabled: true,
         //filename: 'chart',
-        type:'image/png',
-        url:'http://export.highcharts.com/',
-        width:800,
-        buttons:{
-            exportButton:{
+        type: 'image/png',
+        url: 'http://export.highcharts.com/',
+        width: 800,
+        buttons: {
+            exportButton: {
                 //enabled: true,
-                symbol:'exportIcon',
-                x:-10,
-                symbolFill:'#A8BF77',
-                hoverSymbolFill:'#768F3E',
-                _id:'exportButton',
-                _titleKey:'exportButtonTitle',
-                menuItems:[
+                symbol: 'exportIcon',
+                x: -10,
+                symbolFill: '#A8BF77',
+                hoverSymbolFill: '#768F3E',
+                _id: 'exportButton',
+                _titleKey: 'exportButtonTitle',
+                menuItems: [
                     {
-                        textKey:'downloadPNG',
-                        onclick:function () {
+                        textKey: 'downloadPNG',
+                        onclick: function () {
                             this.exportChart();
                         }
                     },
                     {
-                        textKey:'downloadJPEG',
-                        onclick:function () {
+                        textKey: 'downloadJPEG',
+                        onclick: function () {
                             this.exportChart({
-                                type:'image/jpeg'
+                                type: 'image/jpeg'
                             });
                         }
                     },
                     {
-                        textKey:'downloadPDF',
-                        onclick:function () {
+                        textKey: 'downloadPDF',
+                        onclick: function () {
                             this.exportChart({
-                                type:'application/pdf'
+                                type: 'application/pdf'
                             });
                         }
                     },
                     {
-                        textKey:'downloadSVG',
-                        onclick:function () {
+                        textKey: 'downloadSVG',
+                        onclick: function () {
                             this.exportChart({
-                                type:'image/svg+xml'
+                                type: 'image/svg+xml'
                             });
                         }
                     }
@@ -160,15 +160,15 @@
                 ]
 
             },
-            printButton:{
+            printButton: {
                 //enabled: true,
-                symbol:'printIcon',
-                x:-36,
-                symbolFill:'#B5C9DF',
-                hoverSymbolFill:'#779ABF',
-                _id:'printButton',
-                _titleKey:'printButtonTitle',
-                onclick:function () {
+                symbol: 'printIcon',
+                x: -36,
+                symbolFill: '#B5C9DF',
+                hoverSymbolFill: '#779ABF',
+                _id: 'printButton',
+                _titleKey: 'printButtonTitle',
+                onclick: function () {
                     this.print();
                 }
             }
@@ -182,19 +182,19 @@
 
         // create the form
         form = createElement('form', {
-            method:'post',
-            action:url,
-            enctype:'multipart/form-data'
+            method: 'post',
+            action: url,
+            enctype: 'multipart/form-data'
         }, {
-            display:NONE
+            display: NONE
         }, doc.body);
 
         // add the data
         for (name in data) {
             createElement('input', {
-                type:HIDDEN,
-                name:name,
-                value:data[name]
+                type: HIDDEN,
+                name: name,
+                value: data[name]
             }, null, form);
         }
 
@@ -211,7 +211,7 @@
          *
          * @param additionalOptions {Object} Additional chart options for the generated SVG representation
          */
-        getSVG:function (additionalOptions) {
+        getSVG: function (additionalOptions) {
             var chart = this,
                 chartCopy,
                 sandbox,
@@ -231,16 +231,16 @@
 
             // create a sandbox where a new chart will be generated
             sandbox = createElement(DIV, null, {
-                position:ABSOLUTE,
-                top:'-9999em',
-                width:chart.chartWidth + PX,
-                height:chart.chartHeight + PX
+                position: ABSOLUTE,
+                top: '-9999em',
+                width: chart.chartWidth + PX,
+                height: chart.chartHeight + PX
             }, doc.body);
 
             // override some options
             extend(options.chart, {
-                renderTo:sandbox,
-                forExport:true
+                renderTo: sandbox,
+                forExport: true
             });
             options.exporting.enabled = false; // hide buttons in print
             options.chart.plotBackgroundImage = null; // the converter doesn't handle images
@@ -249,9 +249,9 @@
             options.series = [];
             each(chart.series, function (serie) {
                 seriesOptions = merge(serie.options, {
-                    animation:false, // turn off animation
-                    showCheckbox:false,
-                    visible:serie.visible
+                    animation: false, // turn off animation
+                    showCheckbox: false,
+                    visible: serie.visible
                 });
 
                 if (!seriesOptions.isInternal) { // used for the navigator series that has its own option set
@@ -333,7 +333,7 @@
          * @param {Object} options Exporting options. Possible members are url, type and width.
          * @param {Object} chartOptions Additional chart options for the SVG representation of the chart
          */
-        exportChart:function (options, chartOptions) {
+        exportChart: function (options, chartOptions) {
             var exportingOptions = this.options.exporting,
                 svg = this.getSVG(merge(exportingOptions.chartOptions, chartOptions));
 
@@ -342,11 +342,11 @@
 
             // do the post
             Highcharts.post(options.url, {
-                filename:options.filename || 'chart',
-                type:options.type,
-                width:options.width,
-                scale:options.scale || 2,
-                svg:svg
+                filename: options.filename || 'chart',
+                type: options.type,
+                width: options.width,
+                scale: options.scale || 2,
+                svg: svg
             });
 
         },
@@ -354,7 +354,7 @@
         /**
          * Print the chart
          */
-        print:function () {
+        print: function () {
 
             var chart = this,
                 container = chart.container,
@@ -412,7 +412,7 @@
          * @param {Number} width The width of the opener button
          * @param {Number} height The height of the opener button
          */
-        contextMenu:function (name, items, x, y, width, height) {
+        contextMenu: function (name, items, x, y, width, height) {
             var chart = this,
                 navOptions = chart.options.navigation,
                 menuItemStyle = navOptions.menuItemStyle,
@@ -432,23 +432,23 @@
 
                 // create a HTML element above the SVG
                 chart[cacheName] = menu = createElement(DIV, {
-                    className:PREFIX + name
+                    className: PREFIX + name
                 }, {
-                    position:ABSOLUTE,
-                    zIndex:1000,
-                    padding:menuPadding + PX
+                    position: ABSOLUTE,
+                    zIndex: 1000,
+                    padding: menuPadding + PX
                 }, chart.container);
 
                 innerMenu = createElement(DIV, null,
                     extend({
-                        MozBoxShadow:boxShadow,
-                        WebkitBoxShadow:boxShadow,
-                        boxShadow:boxShadow
+                        MozBoxShadow: boxShadow,
+                        WebkitBoxShadow: boxShadow,
+                        boxShadow: boxShadow
                     }, navOptions.menuStyle), menu);
 
                 // hide on mouse out
                 hide = function () {
-                    css(menu, { display:NONE });
+                    css(menu, { display: NONE });
                 };
 
                 // Hide the menu some time after mouse leave (#1357)
@@ -464,15 +464,15 @@
                 each(items, function (item) {
                     if (item) {
                         var div = createElement(DIV, {
-                            onmouseover:function () {
+                            onmouseover: function () {
                                 css(this, navOptions.menuItemHoverStyle);
                             },
-                            onmouseout:function () {
+                            onmouseout: function () {
                                 css(this, menuItemStyle);
                             },
-                            innerHTML:item.text || chart.options.lang[item.textKey]
+                            innerHTML: item.text || chart.options.lang[item.textKey]
                         }, extend({
-                            cursor:'pointer'
+                            cursor: 'pointer'
                         }, menuItemStyle), innerMenu);
 
                         div.onclick = function () {
@@ -492,7 +492,7 @@
                 chart.exportMenuHeight = menu.offsetHeight;
             }
 
-            menuStyle = { display:'block' };
+            menuStyle = { display: 'block' };
 
             // if outside right, right align it
             if (x + chart.exportMenuWidth > chartWidth) {
@@ -513,7 +513,7 @@
         /**
          * Add the export button to the chart
          */
-        addButton:function (options) {
+        addButton: function (options) {
             var chart = this,
                 renderer = chart.renderer,
                 btnOptions = merge(chart.options.navigation.buttonOptions, options),
@@ -527,12 +527,12 @@
                 menuKey,
                 borderWidth = btnOptions.borderWidth,
                 boxAttr = {
-                    stroke:btnOptions.borderColor
+                    stroke: btnOptions.borderColor
 
                 },
                 symbolAttr = {
-                    stroke:btnOptions.symbolStroke,
-                    fill:btnOptions.symbolFill
+                    stroke: btnOptions.symbolStroke,
+                    fill: btnOptions.symbolFill
                 },
                 symbolSize = btnOptions.symbolSize || 12;
 
@@ -559,45 +559,45 @@
 
             // the box border
             box = renderer.rect(
-                0,
-                0,
-                buttonWidth,
-                buttonHeight,
-                btnOptions.borderRadius,
-                borderWidth
-            )
+                    0,
+                    0,
+                    buttonWidth,
+                    buttonHeight,
+                    btnOptions.borderRadius,
+                    borderWidth
+                )
                 //.translate(buttonLeft, buttonTop) // to allow gradients
                 .align(btnOptions, true)
                 .attr(extend({
-                fill:btnOptions.backgroundColor,
-                'stroke-width':borderWidth,
-                zIndex:19
-            }, boxAttr)).add();
+                    fill: btnOptions.backgroundColor,
+                    'stroke-width': borderWidth,
+                    zIndex: 19
+                }, boxAttr)).add();
 
             // the invisible element to track the clicks
             button = renderer.rect(
-                0,
-                0,
-                buttonWidth,
-                buttonHeight,
-                0
-            )
+                    0,
+                    0,
+                    buttonWidth,
+                    buttonHeight,
+                    0
+                )
                 .align(btnOptions)
                 .attr({
-                    id:btnOptions._id,
-                    fill:'rgba(255, 255, 255, 0.001)',
-                    title:chart.options.lang[btnOptions._titleKey],
-                    zIndex:21
+                    id: btnOptions._id,
+                    fill: 'rgba(255, 255, 255, 0.001)',
+                    title: chart.options.lang[btnOptions._titleKey],
+                    zIndex: 21
                 }).css({
-                    cursor:'pointer'
+                    cursor: 'pointer'
                 })
                 .on('mouseover', function () {
                     symbol.attr({
-                        stroke:btnOptions.hoverSymbolStroke,
-                        fill:btnOptions.hoverSymbolFill
+                        stroke: btnOptions.hoverSymbolStroke,
+                        fill: btnOptions.hoverSymbolFill
                     });
                     box.attr({
-                        stroke:btnOptions.hoverBorderColor
+                        stroke: btnOptions.hoverBorderColor
                     });
                 })
                 .on('mouseout', revert)
@@ -622,17 +622,17 @@
 
             // the icon
             symbol = renderer.symbol(
-                btnOptions.symbol,
-                btnOptions.symbolX - (symbolSize / 2),
-                btnOptions.symbolY - (symbolSize / 2),
-                symbolSize,
-                symbolSize
-            )
+                    btnOptions.symbol,
+                    btnOptions.symbolX - (symbolSize / 2),
+                    btnOptions.symbolY - (symbolSize / 2),
+                    symbolSize,
+                    symbolSize
+                )
                 .align(btnOptions, true)
                 .attr(extend(symbolAttr, {
-                'stroke-width':btnOptions.symbolStrokeWidth || 1,
-                zIndex:20
-            })).add();
+                    'stroke-width': btnOptions.symbolStrokeWidth || 1,
+                    zIndex: 20
+                })).add();
 
             // Keep references to the renderer element so to be able to destroy them later.
             chart.exportSVGElements.push(box, button, symbol);
@@ -641,7 +641,7 @@
         /**
          * Destroy the buttons.
          */
-        destroyExport:function () {
+        destroyExport: function () {
             var i,
                 chart = this,
                 elem;
