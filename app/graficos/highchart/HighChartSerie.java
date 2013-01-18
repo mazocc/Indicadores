@@ -1,5 +1,6 @@
 package graficos.highchart;
 
+import com.google.common.collect.Lists;
 import graficos.inter.Serie;
 
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 public class HighChartSerie implements Serie {
 
   public String nome;
-  public List<Double> valores;
+  public List<Double> valores = Lists.newArrayList();
 
   public HighChartSerie(String nome, List<Double> valores) {
     this.nome = nome;

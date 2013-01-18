@@ -36,6 +36,8 @@
 <script type="text/javascript" src="@{'/public/highcharts/js/themes/gray.js'}" charset="${_response_encoding}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        $.ajaxSetup({ cache: false });
+
         if ($("[rel=tooltip]").length) {
             $("[rel=tooltip]").tooltip();
         }

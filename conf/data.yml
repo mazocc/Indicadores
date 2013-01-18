@@ -37,9 +37,9 @@ models.Pessoa(administrador):
   senha: 28091990
 
 models.Pessoa(mauriciocc):
-    nome: Mauricio Colognese Concatto
-    email: mauriciocc@outlook.com
-    senha: 28091990
+  nome: Mauricio Colognese Concatto
+  email: mauriciocc@outlook.com
+  senha: 28091990
 
 models.ForcaTarefa(forca_um):
   pessoas:
@@ -58,10 +58,27 @@ models.Indicador(indicador_um):
   registros:
     - registro_um
 
-models.RegistroIndicador(registro_um):
+models.RegistroIndicador(registro_1):
   data: 2013-01-01
   indicador: indicador_um
   valor: 3
 
+models.RegistroIndicador(registro_2):
+  data: 2013-01-02
+  indicador: indicador_um
+  valor: 4
 
+models.RegistroIndicador(registro_3):
+  data: 2013-01-03
+  indicador: indicador_um
+  valor: 5
 
+models.RegistroIndicador(registro_4):
+  data: 2013-01-04
+  indicador: indicador_um
+  valor: 6
+
+models.RegistroIndicador(registro_5):
+  data: 2013-01-05
+  indicador: indicador_um
+  valor: 7

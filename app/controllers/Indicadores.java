@@ -1,7 +1,5 @@
 package controllers;
 
-import flexjson.JSONSerializer;
-import flexjson.transformer.BasicDateTransformer;
 import graficos.highchart.HighChartFactory;
 import graficos.inter.Grafico;
 import models.Indicador;
@@ -9,7 +7,6 @@ import models.Meta;
 import models.Perspectiva;
 import play.mvc.Controller;
 
-import java.util.Date;
 import java.util.List;
 
 public class Indicadores extends Controller {
@@ -27,9 +24,6 @@ public class Indicadores extends Controller {
     Meta meta = indicador.meta;
     Grafico grafico = null;
     render(indicador, meta, grafico);
-    renderJSON(new JSONSerializer()
-        .transform(new BasicDateTransformer(), Date.class)
-        .include("registros").deepSerialize(indicador));
   }
 
   public static void visualizarJson(Long id) {
@@ -37,4 +31,5 @@ public class Indicadores extends Controller {
     Grafico grafico = new HighChartFactory(indicador).valoresIndicador();
     renderJSON(grafico);
   }
+
 }

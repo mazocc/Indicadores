@@ -23,6 +23,6 @@ public class Pessoa extends Model {
 
   @Override
   public String toString() {
-    return id + " - " + email;
+    return nome;
   }
 }

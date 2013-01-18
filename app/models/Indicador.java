@@ -1,11 +1,15 @@
 package models;
 
+import com.google.common.collect.Sets;
 import formatadores.Formato;
+import org.joda.time.LocalDate;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Indicador extends Model {
@@ -43,5 +47,18 @@ public class Indicador extends Model {
   @Override
   public String toString() {
     return id + " - " + descricao;
+  }
+
+  public Set<Integer> anosComRegistro() {
+    Set<Integer> set = Sets.newHashSet();
+    for (RegistroIndicador r : registros) {
+      set.add(LocalDate.fromDateFields(r.data).getYear());
+    }
+    return set;
+  }
+
+  public List<RegistroIndicador> registrosOrdenados() {
+    Collections.sort(registros);
+    return registros;
   }
 }
