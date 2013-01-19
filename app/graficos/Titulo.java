@@ -1,4 +1,4 @@
-package graficos.inter;
+package graficos;
 
 public interface Titulo {
   public String descricao();

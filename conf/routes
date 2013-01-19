@@ -23,7 +23,8 @@ DELETE  /objetivos/{<[0-9]+>id}               Objetivos.apagar
 
 # Indicadores
 GET     /indicadores/{<[0-9]+>id}       Indicadores.visualizar
-GET     /indicadores/{<[0-9]+>id}/json       Indicadores.visualizarJson
+GET     /indicadores/{<[0-9]+>id}/linha       Indicadores.visualizarJsonGraficoLinha
+GET     /indicadores/{<[0-9]+>id}/coluna       Indicadores.visualizarJsonGraficoColuna
 
 
 GET     /favicon.ico                            404

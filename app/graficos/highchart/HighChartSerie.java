@@ -1,7 +1,7 @@
 package graficos.highchart;
 
 import com.google.common.collect.Lists;
-import graficos.inter.Serie;
+import graficos.Serie;
 
 import java.util.List;
 

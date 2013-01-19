@@ -1,31 +1,33 @@
 package graficos.highchart;
 
-import graficos.inter.Categoria;
-import graficos.inter.Eixo;
-import graficos.inter.Grafico;
-import graficos.inter.Serie;
+import graficos.Categoria;
+import graficos.Grafico;
+import graficos.GraficoFactory;
+import graficos.Serie;
 import models.Indicador;
 import models.RegistroIndicador;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static graficos.inter.TipoGrafico.line;
+import static graficos.TipoGrafico.line;
 import static play.i18n.Messages.get;
 
-public class HighChartFactory {
+public class HighChartValoresIndicadorFactory implements GraficoFactory {
 
   public Indicador indicador;
 
-  public HighChartFactory(Indicador indicador) {
+  public HighChartValoresIndicadorFactory(Indicador indicador) {
     this.indicador = indicador;
   }
 
-  public Grafico valoresIndicador() {
-    Eixo eixoX = new HighChartEixo(criaCategorias());
-    Eixo eixoY = new HighChartEixo(new HighChartTitulo(get("valores")));
+  @Override
+  public Grafico criaGrafico() {
+    HighChartEixo eixoX = new HighChartEixo(criaCategorias());
+    HighChartEixo eixoY = new HighChartEixo(new HighChartTitulo(get("valores")));
+    eixoY.formato = indicador.formato;
 
-    return new HighChartGrafico(line, new HighChartTitulo(indicador.descricao), eixoX, eixoY, series());
+    return new HighChartGrafico(line, new HighChartTitulo(get("acompanhamento.mensal")), eixoX, eixoY, series());
   }
 
   private List<Serie> series() {
@@ -62,8 +64,6 @@ public class HighChartFactory {
         categorias.add(new HighChartCategoria(get("dezembro")));
         break;
     }
-
-
     return categorias;
   }
 

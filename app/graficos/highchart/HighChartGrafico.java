@@ -1,6 +1,6 @@
 package graficos.highchart;
 
-import graficos.inter.*;
+import graficos.*;
 
 import java.util.List;
 

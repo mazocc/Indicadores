@@ -1,6 +1,6 @@
 package graficos.highchart;
 
-import graficos.inter.Categoria;
+import graficos.Categoria;
 
 public class HighChartCategoria implements Categoria {
 

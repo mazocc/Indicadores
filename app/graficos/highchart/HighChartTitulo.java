@@ -1,6 +1,6 @@
 package graficos.highchart;
 
-import graficos.inter.Titulo;
+import graficos.Titulo;
 
 public class HighChartTitulo implements Titulo {
 

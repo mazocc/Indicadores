@@ -1,4 +1,4 @@
-package graficos.inter;
+package graficos;
 
 import java.util.List;
 
@@ -10,4 +10,5 @@ public interface Eixo {
   public Eixo adicionar(Categoria categoria);
 
   public Eixo remover(Categoria categoria);
+
 }

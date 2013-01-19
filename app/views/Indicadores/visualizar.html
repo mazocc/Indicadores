@@ -1,54 +1,5 @@
 #{extends 'principal.html'/}
 
-#{set 'moreScripts'}
-<script type="text/javascript">
-    var chart;
-    $(document).ready(function () {
-        var jsonData = #{jsRoute @Indicadores.visualizarJson(':id') /};
-        $.ajax({
-            url: jsonData.url({id: ${indicador.id}}),
-            method: jsonData.method
-        }).done(function (data) {
-                    var cats = new Array();
-                    var series = new Array();
-                    for (x in data.eixoX.categorias) {
-                        cats.push(data.eixoX.categorias[x].descricao);
-                    }
-
-                    for (x in data.series) {
-                        var obj = {
-                            name: data.series[x].nome,
-                            data: data.series[x].valores
-                        }
-                        series.push(obj);
-                    }
-
-
-                    chart = new Highcharts.Chart({
-                        chart: {
-                            renderTo: 'grafico',
-                            type: data.tipoGrafico
-                        },
-                        title: {
-                            text: data.titulo.titulo
-                        },
-                        xAxis: {
-                            categories: cats
-                        },
-                        yAxis: {
-                            title: {
-                                text: data.eixoY.titulo.titulo
-                            }
-                        },
-                        series: series
-                    });
-
-                });
-
-
-    });
-</script>
-#{/set}
 <p><strong>&{'perspectiva'}:</strong> ${indicador.objetivo.perspectiva.descricao}</p>
 <p><strong>&{'objetivo'}:</strong> ${indicador.objetivo.descricao}</p>
 <p><strong>&{'indicador'}:</strong> ${indicador.descricao}</p>
@@ -56,6 +7,36 @@
 <p><strong>&{'forca.tarefa'}:</strong> ${indicador.forcaTarefa.pessoas.join(",")} (${indicador.forcaTarefa.descricao})
 </p>
 <p><strong>&{'descricao.meta'}:</strong> ${indicador.meta.descricao}</p>
-<div id="grafico">
+
+<div id="graficoLinha" class="grafico pull-left">
 
 </div>
+
+<div id="graficoColuna" class="grafico pull-left">
+
+</div>
+
+
+#{set 'moreScripts'}
+  #{script 'graficos.js'/}
+<script type="text/javascript">
+  $(document).ready(function () {
+    var graficoLinha = #{jsRoute @Indicadores.visualizarJsonGraficoLinha(':id') /};
+    var graficoColuna = #{jsRoute @Indicadores.visualizarJsonGraficoColuna(':id') /};
+    $.ajax({
+      url:graficoLinha.url({id: ${indicador.id}}),
+      method:graficoLinha.method
+    }).done(function (data) {
+          rendenizarGrafico(data, 'graficoLinha');
+        });
+
+    $.ajax({
+      url:graficoColuna.url({id: ${indicador.id}}),
+      method:graficoColuna.method
+    }).done(function (data) {
+          rendenizarGrafico(data, 'graficoColuna');
+        });
+
+  });
+</script>
+#{/set}

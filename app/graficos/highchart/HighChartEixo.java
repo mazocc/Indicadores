@@ -1,8 +1,9 @@
 package graficos.highchart;
 
-import graficos.inter.Categoria;
-import graficos.inter.Eixo;
-import graficos.inter.Titulo;
+import formatadores.Formato;
+import graficos.Categoria;
+import graficos.Eixo;
+import graficos.Titulo;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class HighChartEixo implements Eixo {
 
   public List<Categoria> categorias;
   public Titulo titulo;
+  public Formato formato;
 
   public HighChartEixo(List<Categoria> categorias) {
     this.categorias = categorias;

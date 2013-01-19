@@ -1,7 +1,8 @@
 package controllers;
 
-import graficos.highchart.HighChartFactory;
-import graficos.inter.Grafico;
+import graficos.Grafico;
+import graficos.highchart.HighChartValoresIndicadorFactory;
+import graficos.highchart.HighChartValoresMetaFactory;
 import models.Indicador;
 import models.Meta;
 import models.Perspectiva;
@@ -26,9 +27,15 @@ public class Indicadores extends Controller {
     render(indicador, meta, grafico);
   }
 
-  public static void visualizarJson(Long id) {
+  public static void visualizarJsonGraficoLinha(Long id) {
     Indicador indicador = Indicador.findById(id);
-    Grafico grafico = new HighChartFactory(indicador).valoresIndicador();
+    Grafico grafico = new HighChartValoresIndicadorFactory(indicador).criaGrafico();
+    renderJSON(grafico);
+  }
+
+  public static void visualizarJsonGraficoColuna(Long id) {
+    Indicador indicador = Indicador.findById(id);
+    Grafico grafico = new HighChartValoresMetaFactory(indicador).criaGrafico();
     renderJSON(grafico);
   }
 

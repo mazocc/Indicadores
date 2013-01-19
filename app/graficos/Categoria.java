@@ -1,4 +1,4 @@
-package graficos.inter;
+package graficos;
 
 public interface Categoria {
   public String descricao();

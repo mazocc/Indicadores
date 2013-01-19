@@ -1,4 +1,4 @@
-package graficos.inter;
+package graficos;
 
 import java.util.List;
 
