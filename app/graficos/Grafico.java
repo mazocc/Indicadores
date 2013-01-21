@@ -1,5 +1,7 @@
 package graficos;
 
+import models.Ordem;
+
 import java.util.List;
 
 public interface Grafico {
@@ -14,5 +16,7 @@ public interface Grafico {
   public Eixo eixoY();
 
   public List<Serie> series();
+
+  public Ordem ordem();
 
 }

@@ -1,4 +1,5 @@
-# Perspectivas
+models.Iniciativa(iniciativa_1):
+  descricao: Teste de iniciativa
 
 models.Perspectiva(perspectiva_um):
   descricao: Perspectiva de Teste
@@ -72,6 +73,9 @@ models.Indicador(indicador_um):
   objetivo: objetivo_um
   registros:
     - registro_um
+  iniciativa:
+    - iniciativa_1
+  ordem: Decrescente
 
 models.RegistroIndicador(registro_2):
   data: 2013-01-02
@@ -105,6 +109,9 @@ models.Indicador(indicador_dois):
     objetivo: objetivo_um
     registros:
       - registro_um
+    iniciativa:
+      - iniciativa_1
+    ordem: Crescente
 
 models.RegistroIndicador(indicador_dois_1):
     data: 2013-01-02
@@ -143,6 +150,9 @@ models.Indicador(indicador_tres):
     objetivo: objetivo_um
     registros:
       - registro_um
+    iniciativa:
+      - iniciativa_1
+    ordem: Decrescente
 
 models.RegistroIndicador(indicador_três_1):
     data: 2013-01-02
@@ -181,6 +191,9 @@ models.Indicador(indicador_quatro):
     objetivo: objetivo_um
     registros:
       - registro_um
+    iniciativa:
+      - iniciativa_1
+    ordem: Crescente
 
 models.RegistroIndicador(indicador_quatro_1):
     data: 2013-01-02

@@ -17,8 +17,9 @@ public class Indicador extends Model {
   @Required
   public String descricao;
 
-  @Required
-  public String iniciativa;
+  @ManyToOne
+  @JoinColumn(name = "iniciativa_id")
+  public Iniciativa iniciativa;
 
   @Enumerated(EnumType.STRING)
   public Formato formato;
@@ -36,6 +37,9 @@ public class Indicador extends Model {
 
   @Enumerated(EnumType.STRING)
   public Periodicidade periodicidade;
+
+  @Enumerated(EnumType.STRING)
+  public Ordem ordem;
 
   @OneToMany(mappedBy = "indicador")
   public List<RegistroIndicador> registros;

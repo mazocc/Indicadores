@@ -27,7 +27,7 @@ public class HighChartValoresIndicadorFactory implements GraficoFactory {
     HighChartEixo eixoY = new HighChartEixo(new HighChartTitulo(get("valores")));
     eixoY.formato = indicador.formato;
 
-    return new HighChartGrafico(line, new HighChartTitulo(get("acompanhamento.mensal")), eixoX, eixoY, series());
+    return new HighChartGrafico(line, new HighChartTitulo(get("acompanhamento.mensal")), eixoX, eixoY, series(), indicador.ordem);
   }
 
   private List<Serie> series() {
