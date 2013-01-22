@@ -1,4 +1,4 @@
-package models;
+package models.enumeracoes;
 
 public enum Periodicidade {
   Diario,

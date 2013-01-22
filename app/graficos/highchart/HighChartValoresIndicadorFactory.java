@@ -4,8 +4,8 @@ import graficos.Categoria;
 import graficos.Grafico;
 import graficos.GraficoFactory;
 import graficos.Serie;
-import models.Indicador;
-import models.RegistroIndicador;
+import models.indicador.Indicador;
+import models.indicador.RegistroIndicador;
 
 import java.util.ArrayList;
 import java.util.List;

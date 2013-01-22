@@ -20,6 +20,6 @@ public class Perspectiva extends Model {
 
   @Override
   public String toString() {
-    return id + " - " + descricao;
+    return descricao;
   }
 }

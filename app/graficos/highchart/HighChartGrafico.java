@@ -1,7 +1,7 @@
 package graficos.highchart;
 
 import graficos.*;
-import models.Ordem;
+import models.enumeracoes.Ordem;
 
 import java.util.List;
 

@@ -1,5 +1,6 @@
 package models;
 
+import models.indicador.Indicador;
 import play.data.validation.MinSize;
 import play.data.validation.Required;
 import play.db.jpa.Model;
@@ -27,6 +28,6 @@ public class Objetivo extends Model {
 
   @Override
   public String toString() {
-    return id + " - " + descricao;
+    return descricao;
   }
 }

@@ -1,9 +1,9 @@
 package graficos.highchart;
 
 import graficos.*;
-import models.Indicador;
-import models.RegistroIndicador;
-import models.ValorAnual;
+import models.indicador.Indicador;
+import models.indicador.RegistroIndicador;
+import models.meta.ValorAnual;
 
 import java.util.ArrayList;
 import java.util.List;

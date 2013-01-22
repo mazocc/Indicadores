@@ -1,15 +1,23 @@
-package models;
+package models.indicador;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import formatadores.Formato;
+import models.ForcaTarefa;
+import models.Iniciativa;
+import models.Objetivo;
+import models.Pessoa;
+import models.enumeracoes.Ordem;
+import models.enumeracoes.Periodicidade;
+import models.meta.Meta;
 import org.joda.time.LocalDate;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Indicador extends Model {
@@ -44,21 +52,29 @@ public class Indicador extends Model {
   @OneToMany(mappedBy = "indicador")
   public List<RegistroIndicador> registros;
 
+  @OneToMany(mappedBy = "indicador")
+  public List<ReferencialComparativo> referenciaisComparativos;
+
+  @OneToMany(mappedBy = "indicador")
+  public List<TotalRealizado> totaisRealizados;
+
   @ManyToOne
   @JoinColumn(name = "objetivo_id", nullable = false)
   public Objetivo objetivo;
 
   @Override
   public String toString() {
-    return id + " - " + descricao;
+    return descricao;
   }
 
-  public Set<Integer> anosComRegistro() {
-    Set<Integer> set = Sets.newHashSet();
+  public List<Integer> anosComRegistro() {
+    Collection<Integer> set = Sets.newLinkedHashSet();
     for (RegistroIndicador r : registros) {
       set.add(LocalDate.fromDateFields(r.data).getYear());
     }
-    return set;
+    List<Integer> list = Lists.newArrayList(set);
+    Collections.sort(list);
+    return list;
   }
 
   public List<RegistroIndicador> registrosOrdenados() {

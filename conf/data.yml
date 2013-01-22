@@ -9,40 +9,40 @@ models.Objetivo(objetivo_um):
   descricao: Primeiro Objetivo
   perspectiva: perspectiva_um
 
-models.Meta(meta_um):
+models.meta.Meta(meta_um):
   descricao: Primeira Meta
 
-models.ValorAnual(valor_um):
+models.meta.ValorAnual(valor_um):
   meta: meta_um
   valor: 1
   ano: 2010
 
-models.ValorAnual(valor_dois):
+models.meta.ValorAnual(valor_dois):
   meta: meta_um
   valor: 2
   ano: 2011
 
-models.ValorAnual(valor_tres):
+models.meta.ValorAnual(valor_tres):
   meta: meta_um
   valor: 3
   ano: 2012
 
-models.ValorAnual(valor_quatro):
+models.meta.ValorAnual(valor_quatro):
   meta: meta_um
   valor: 4
   ano: 2013
 
-models.ValorAnual(valor_5):
+models.meta.ValorAnual(valor_5):
   meta: meta_um
   valor: 15
   ano: 2015
 
-models.ValorAnual(valor_6):
+models.meta.ValorAnual(valor_6):
   meta: meta_um
   valor: 20
   ano: 2016
 
-models.ValorAnual(valor_7):
+models.meta.ValorAnual(valor_7):
   meta: meta_um
   valor: 16
   ano: 2017
@@ -61,7 +61,7 @@ models.ForcaTarefa(forca_um):
   pessoas:
     - administrador
 
-models.Indicador(indicador_um):
+models.indicador.Indicador(indicador_um):
   descricao: Indicador de Teste
   iniciativa: Iniciativa de Teste
   formato: Inteiro
@@ -77,27 +77,27 @@ models.Indicador(indicador_um):
     - iniciativa_1
   ordem: Decrescente
 
-models.RegistroIndicador(registro_2):
+models.indicador.RegistroIndicador(registro_2):
   data: 2013-01-02
   indicador: indicador_um
   valor: 4
 
-models.RegistroIndicador(registro_3):
+models.indicador.RegistroIndicador(registro_3):
   data: 2013-01-03
   indicador: indicador_um
   valor: 5
 
-models.RegistroIndicador(registro_4):
+models.indicador.RegistroIndicador(registro_4):
   data: 2013-01-04
   indicador: indicador_um
   valor: 6
 
-models.RegistroIndicador(registro_5):
+models.indicador.RegistroIndicador(registro_5):
   data: 2013-01-05
   indicador: indicador_um
   valor: 7
 
-models.Indicador(indicador_dois):
+models.indicador.Indicador(indicador_dois):
     descricao: Indicador de Teste Percentual
     iniciativa: Indicador de Teste Percentual
     formato: Percentual
@@ -113,32 +113,32 @@ models.Indicador(indicador_dois):
       - iniciativa_1
     ordem: Crescente
 
-models.RegistroIndicador(indicador_dois_1):
+models.indicador.RegistroIndicador(indicador_dois_1):
     data: 2013-01-02
     indicador: indicador_dois
     valor: 1
 
-models.RegistroIndicador(indicador_dois_2):
+models.indicador.RegistroIndicador(indicador_dois_2):
     data: 2014-01-02
     indicador: indicador_dois
     valor: 10
 
-models.RegistroIndicador(indicador_dois_3):
+models.indicador.RegistroIndicador(indicador_dois_3):
     data: 2015-01-03
     indicador: indicador_dois
     valor: 15
 
-models.RegistroIndicador(indicador_dois_4):
+models.indicador.RegistroIndicador(indicador_dois_4):
     data: 2016-01-04
     indicador: indicador_dois
     valor: 20
 
-models.RegistroIndicador(indicador_dois_5):
+models.indicador.RegistroIndicador(indicador_dois_5):
     data: 2017-01-05
     indicador: indicador_dois
     valor: 25
 
-models.Indicador(indicador_tres):
+models.indicador.Indicador(indicador_tres):
     descricao: Indicador de Teste Numerico
     iniciativa: Indicador de Teste Numerico
     formato: Numerico
@@ -154,32 +154,32 @@ models.Indicador(indicador_tres):
       - iniciativa_1
     ordem: Decrescente
 
-models.RegistroIndicador(indicador_três_1):
+models.indicador.RegistroIndicador(indicador_três_1):
     data: 2013-01-02
     indicador: indicador_tres
     valor: 38
 
-models.RegistroIndicador(indicador_três_2):
+models.indicador.RegistroIndicador(indicador_três_2):
     data: 2014-01-02
     indicador: indicador_tres
     valor: 21.9889
 
-models.RegistroIndicador(indicador_três_3):
+models.indicador.RegistroIndicador(indicador_três_3):
     data: 2015-01-03
     indicador: indicador_tres
     valor: 15.145
 
-models.RegistroIndicador(indicador_três_4):
+models.indicador.RegistroIndicador(indicador_três_4):
     data: 2016-01-04
     indicador: indicador_tres
     valor: 80.549
 
-models.RegistroIndicador(indicador_três_5):
+models.indicador.RegistroIndicador(indicador_três_5):
     data: 2017-01-05
     indicador: indicador_tres
     valor: 50.456498
 
-models.Indicador(indicador_quatro):
+models.indicador.Indicador(indicador_quatro):
     descricao: Indicador de Teste Monetario
     iniciativa: Indicador de Teste Monetario
     formato: Monetario
@@ -195,27 +195,27 @@ models.Indicador(indicador_quatro):
       - iniciativa_1
     ordem: Crescente
 
-models.RegistroIndicador(indicador_quatro_1):
+models.indicador.RegistroIndicador(indicador_quatro_1):
     data: 2013-01-02
     indicador: indicador_quatro
     valor: 25
 
-models.RegistroIndicador(indicador_quatro_2):
+models.indicador.RegistroIndicador(indicador_quatro_2):
     data: 2014-01-02
     indicador: indicador_quatro
     valor: 40.9889
 
-models.RegistroIndicador(indicador_quatro_3):
+models.indicador.RegistroIndicador(indicador_quatro_3):
     data: 2015-01-03
     indicador: indicador_quatro
     valor: 50.145
 
-models.RegistroIndicador(indicador_quatro_4):
+models.indicador.RegistroIndicador(indicador_quatro_4):
     data: 2016-01-04
     indicador: indicador_quatro
     valor: 30.549
 
-models.RegistroIndicador(indicador_quatro_5):
+models.indicador.RegistroIndicador(indicador_quatro_5):
     data: 2017-01-05
     indicador: indicador_quatro
     valor: 20.456498

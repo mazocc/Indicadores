@@ -3,9 +3,9 @@ package controllers;
 import graficos.Grafico;
 import graficos.highchart.HighChartValoresIndicadorFactory;
 import graficos.highchart.HighChartValoresMetaFactory;
-import models.Indicador;
-import models.Meta;
 import models.Perspectiva;
+import models.indicador.Indicador;
+import models.meta.Meta;
 import play.mvc.Controller;
 
 import java.util.List;

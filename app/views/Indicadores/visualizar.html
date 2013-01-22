@@ -6,6 +6,7 @@
 <p><strong>&{'responsaveis'}:</strong> ${indicador.responsaveis.join(",")}</p>
 <p><strong>&{'forca.tarefa'}:</strong> ${indicador.forcaTarefa.pessoas.join(",")} (${indicador.forcaTarefa.descricao})
 </p>
+<p><strong>&{'iniciativa'}:</strong> ${indicador.iniciativa.descricao}</p>
 <p><strong>&{'descricao.meta'}:</strong> ${indicador.meta.descricao}</p>
 
 <div id="graficoLinha" class="grafico pull-left">
@@ -20,23 +21,23 @@
 #{set 'moreScripts'}
   #{script 'graficos.js'/}
 <script type="text/javascript">
-  $(document).ready(function () {
-    var graficoLinha = #{jsRoute @Indicadores.visualizarJsonGraficoLinha(':id') /};
-    var graficoColuna = #{jsRoute @Indicadores.visualizarJsonGraficoColuna(':id') /};
-    $.ajax({
-      url:graficoLinha.url({id: ${indicador.id}}),
-      method:graficoLinha.method
-    }).done(function (data) {
-          rendenizarGrafico(data, 'graficoLinha');
-        });
+    $(document).ready(function () {
+        var graficoLinha = #{jsRoute @Indicadores.visualizarJsonGraficoLinha(':id') /};
+        var graficoColuna = #{jsRoute @Indicadores.visualizarJsonGraficoColuna(':id') /};
+        $.ajax({
+            url: graficoLinha.url({id: ${indicador.id}}),
+            method: graficoLinha.method
+        }).done(function (data) {
+                    rendenizarGrafico(data, 'graficoLinha');
+                });
 
-    $.ajax({
-      url:graficoColuna.url({id: ${indicador.id}}),
-      method:graficoColuna.method
-    }).done(function (data) {
-          rendenizarGrafico(data, 'graficoColuna');
-        });
+        $.ajax({
+            url: graficoColuna.url({id: ${indicador.id}}),
+            method: graficoColuna.method
+        }).done(function (data) {
+                    rendenizarGrafico(data, 'graficoColuna');
+                });
 
-  });
+    });
 </script>
 #{/set}

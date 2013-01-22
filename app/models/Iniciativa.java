@@ -1,5 +1,6 @@
 package models;
 
+import models.indicador.Indicador;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 

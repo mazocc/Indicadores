@@ -1,4 +1,4 @@
-package models;
+package models.meta;
 
 import play.data.validation.Min;
 import play.data.validation.Required;
@@ -18,8 +18,9 @@ public class ValorAnual extends Model {
   public Meta meta;
 
   @Required
-  @Min(2000)
+  @Min(1900)
   public int ano = Calendar.getInstance().get(Calendar.YEAR);
+
   @Required
   public double valor;
 

@@ -1,5 +1,6 @@
 package models;
 
+import models.indicador.Indicador;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -20,6 +21,6 @@ public class ForcaTarefa extends Model {
 
   @Override
   public String toString() {
-    return id + " - " + descricao;
+    return descricao;
   }
 }

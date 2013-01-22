@@ -1,4 +1,4 @@
-package models;
+package models.indicador;
 
 import org.joda.time.LocalDate;
 import play.data.validation.Required;
