@@ -15,6 +15,8 @@ import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -80,5 +82,47 @@ public class Indicador extends Model {
   public List<RegistroIndicador> registrosOrdenados() {
     Collections.sort(registros);
     return registros;
+  }
+
+  public RegistroIndicador pegaOuCriaRegistro(int ano, int mes) throws ParseException {
+    for (RegistroIndicador r : registros) {
+      if (r.ano() == ano && r.mes() == mes) return r;
+    }
+
+    RegistroIndicador r = new RegistroIndicador();
+    r.data = new SimpleDateFormat("yyyy-MM-dd").parse(String.format("%s-%s-%s", ano, mes, "01"));
+    r.indicador = this;
+    registros.add(r);
+    r.valor = 0;
+    r.save();
+    return r;
+  }
+
+  public TotalRealizado pegaOuCriaTotalRealizado(int ano) {
+    for (TotalRealizado r : totaisRealizados) {
+      if (r.ano == ano) return r;
+    }
+
+    TotalRealizado r = new TotalRealizado();
+    r.ano = ano;
+    r.indicador = this;
+    totaisRealizados.add(r);
+    r.valor = 0;
+    r.save();
+    return r;
+  }
+
+  public ReferencialComparativo pegaOuCriaReferencialComparativo(int ano) {
+    for (ReferencialComparativo r : referenciaisComparativos) {
+      if (r.ano == ano) return r;
+    }
+
+    ReferencialComparativo r = new ReferencialComparativo();
+    r.ano = ano;
+    r.indicador = this;
+    referenciaisComparativos.add(r);
+    r.valor = 0;
+    r.save();
+    return r;
   }
 }

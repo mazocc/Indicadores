@@ -50,18 +50,18 @@ public class HighChartValoresIndicadorFactory implements GraficoFactory {
       case Anual:
         break;
       case Mensal:
-        categorias.add(new HighChartCategoria(get("janeiro")));
-        categorias.add(new HighChartCategoria(get("fevereiro")));
-        categorias.add(new HighChartCategoria(get("marco")));
-        categorias.add(new HighChartCategoria(get("abril")));
-        categorias.add(new HighChartCategoria(get("maio")));
-        categorias.add(new HighChartCategoria(get("junho")));
-        categorias.add(new HighChartCategoria(get("julho")));
-        categorias.add(new HighChartCategoria(get("agosto")));
-        categorias.add(new HighChartCategoria(get("setembro")));
-        categorias.add(new HighChartCategoria(get("outubro")));
-        categorias.add(new HighChartCategoria(get("novembro")));
-        categorias.add(new HighChartCategoria(get("dezembro")));
+        categorias.add(new HighChartCategoria(get("jan")));
+        categorias.add(new HighChartCategoria(get("fev")));
+        categorias.add(new HighChartCategoria(get("mar")));
+        categorias.add(new HighChartCategoria(get("abr")));
+        categorias.add(new HighChartCategoria(get("mai")));
+        categorias.add(new HighChartCategoria(get("jun")));
+        categorias.add(new HighChartCategoria(get("jul")));
+        categorias.add(new HighChartCategoria(get("ago")));
+        categorias.add(new HighChartCategoria(get("set")));
+        categorias.add(new HighChartCategoria(get("out")));
+        categorias.add(new HighChartCategoria(get("nov")));
+        categorias.add(new HighChartCategoria(get("dez")));
         break;
     }
     return categorias;

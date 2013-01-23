@@ -24,11 +24,15 @@ public class RegistroIndicador extends Model implements Comparable<RegistroIndic
 
   @Override
   public String toString() {
-    return data + " - " + valor;
+    return String.valueOf(valor);
   }
 
   public int ano() {
     return LocalDate.fromDateFields(data).getYear();
+  }
+
+  public int mes() {
+    return LocalDate.fromDateFields(data).getMonthOfYear();
   }
 
   @Override

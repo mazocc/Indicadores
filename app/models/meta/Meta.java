@@ -3,6 +3,7 @@ package models.meta;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import models.indicador.Indicador;
+import models.meta.excecoes.ValorDeMetaNaoEncontrado;
 import play.data.validation.MinSize;
 import play.data.validation.Required;
 import play.db.jpa.Model;
@@ -39,5 +40,12 @@ public class Meta extends Model {
     List<Integer> list = Lists.newArrayList(set);
     Collections.sort(list);
     return list;
+  }
+
+  public double valorDo(int ano) {
+    for (ValorAnual v : valoresAnuais) {
+      if (v.ano == ano) return v.valor;
+    }
+    throw new ValorDeMetaNaoEncontrado();
   }
 }

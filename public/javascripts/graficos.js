@@ -25,7 +25,12 @@ function rendenizarGrafico(json, container) {
             text: json.titulo.titulo
         },
         xAxis: {
-            categories: cats
+            categories: cats,
+            labels: {
+                rotation: -45,
+                align: 'right',
+                fontFamily: 'Consolas'
+            }
         },
         yAxis: {
             allowDecimals: true,

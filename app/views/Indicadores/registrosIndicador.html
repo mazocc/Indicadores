@@ -1,0 +1,57 @@
+#{extends 'principal.html'/}
+
+<div class="row">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th></th>
+            <th>&{'jan'}</th>
+            <th>&{'fev'}</th>
+            <th>&{'mar'}</th>
+            <th>&{'abr'}</th>
+            <th>&{'mai'}</th>
+            <th>&{'jun'}</th>
+            <th>&{'jul'}</th>
+            <th>&{'ago'}</th>
+            <th>&{'set'}</th>
+            <th>&{'out'}</th>
+            <th>&{'nov'}</th>
+            <th>&{'dez'}</th>
+            <th>&{'total.realizado'}</th>
+            <th>&{'meta.anual'}</th>
+            <th>&{'ref.comp'}</th>
+        </tr>
+        </thead>
+        <tbody>
+        #{list indicador.meta.anosComRegistro(), as: 'ano'}
+        <tr>
+            <td>${ano}</td>
+          #{list 1..12, as: 'mes'}
+              <td>
+                #{form @Indicadores.salvarRegistroIndicador(indicador.pegaOuCriaRegistro(ano, mes).id)}
+                    <input type="hidden" name="registroIndicador.id"
+                           value="${indicador.pegaOuCriaRegistro(ano, mes).id}"/>
+                    <input class="listener" type="text" name="registroIndicador.valor"
+                           value="${indicador.pegaOuCriaRegistro(ano, mes).valor}"/>
+                #{/form}
+              </td>
+          #{/list}
+            <td>${indicador.formato.formatar(indicador.pegaOuCriaTotalRealizado(ano).valor)}</td>
+            <td>${indicador.formato.formatar(indicador.meta.valorDo(ano))}</td>
+            <td>${indicador.formato.formatar(indicador.pegaOuCriaReferencialComparativo(ano).valor)}</td>
+        </tr>
+
+        #{/list}
+        </tbody>
+    </table>
+</div>
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.listener').focusout(function () {
+            this.form.submit();
+        });
+    });
+</script>
+#{/set}

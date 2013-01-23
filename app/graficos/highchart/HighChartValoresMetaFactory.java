@@ -2,7 +2,8 @@ package graficos.highchart;
 
 import graficos.*;
 import models.indicador.Indicador;
-import models.indicador.RegistroIndicador;
+import models.indicador.ReferencialComparativo;
+import models.indicador.TotalRealizado;
 import models.meta.ValorAnual;
 
 import java.util.ArrayList;
@@ -41,11 +42,14 @@ public class HighChartValoresMetaFactory implements GraficoFactory {
     }
 
     for (int ano : indicador.meta.anosComRegistro()) {
-      double valorAcumuladoAno = 0;
-      for (RegistroIndicador r : indicador.registros) {
-        if (r.ano() == ano) valorAcumuladoAno += r.valor;
+
+      for (TotalRealizado t : indicador.totaisRealizados) {
+        if (t.ano == ano) series.get(1).adiciona(t.valor);
       }
-      series.get(1).adiciona(valorAcumuladoAno);
+
+      for (ReferencialComparativo rc : indicador.referenciaisComparativos) {
+        if (rc.ano == ano) series.get(2).adiciona(rc.valor);
+      }
     }
 
     return series;
@@ -54,7 +58,7 @@ public class HighChartValoresMetaFactory implements GraficoFactory {
   private List<Categoria> criaCategorias() {
     List<Categoria> categorias = new ArrayList<Categoria>(10);
     for (ValorAnual v : indicador.meta.valoresAnuais)
-      categorias.add(new HighChartCategoria(get("ano") + " " + valueOf(v.ano)));
+      categorias.add(new HighChartCategoria(valueOf(v.ano)));
     return categorias;
   }
 

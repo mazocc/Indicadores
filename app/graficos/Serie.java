@@ -10,4 +10,5 @@ public interface Serie {
   public Serie adiciona(Double valor);
 
   public Serie remove(Double valor);
+
 }

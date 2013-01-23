@@ -22,9 +22,11 @@ POST    /objetivos/salvar              Objetivos.salvar
 DELETE  /objetivos/{<[0-9]+>id}               Objetivos.apagar
 
 # Indicadores
-GET     /indicadores/{<[0-9]+>id}       Indicadores.visualizar
+GET     /indicadores/{<[0-9]+>id}             Indicadores.visualizar
 GET     /indicadores/{<[0-9]+>id}/linha       Indicadores.visualizarJsonGraficoLinha
-GET     /indicadores/{<[0-9]+>id}/coluna       Indicadores.visualizarJsonGraficoColuna
+GET     /indicadores/{<[0-9]+>id}/coluna      Indicadores.visualizarJsonGraficoColuna
+GET     /indicadores/{<[0-9]+>id}/registrar-valores      Indicadores.registrosIndicador
+POST    /indicadores//registros/{<[0-9]+>id}            Indicadores.salvarRegistroIndicador
 
 
 GET     /favicon.ico                            404
