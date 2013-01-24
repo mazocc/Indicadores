@@ -1,7 +1,7 @@
 #{extends 'principal.html'/}
 
 <div class="row">
-    <table class="table table-bordered table-hover">
+    <table class="table table-bordered table-condensed table-hover registros-table">
         <thead>
         <tr>
             <th></th>
@@ -25,20 +25,41 @@
         <tbody>
         #{list indicador.meta.anosComRegistro(), as: 'ano'}
         <tr>
-            <td>${ano}</td>
+            <td><strong>${ano}</strong></td>
           #{list 1..12, as: 'mes'}
               <td>
-                #{form @Indicadores.salvarRegistroIndicador(indicador.pegaOuCriaRegistro(ano, mes).id)}
-                    <input type="hidden" name="registroIndicador.id"
-                           value="${indicador.pegaOuCriaRegistro(ano, mes).id}"/>
-                    <input class="listener" type="text" name="registroIndicador.valor"
-                           value="${indicador.pegaOuCriaRegistro(ano, mes).valor}"/>
-                #{/form}
+                  <form class="registro-listener">
+                      <input type="hidden" name="registro.id"
+                             value="${indicador.pegaOuCriaRegistro(ano, mes).id}"/>
+                      <input type="text" name="registro.valor"
+                             value="${indicador.pegaOuCriaRegistro(ano, mes).valor}"/>
+                  </form>
               </td>
           #{/list}
-            <td>${indicador.formato.formatar(indicador.pegaOuCriaTotalRealizado(ano).valor)}</td>
-            <td>${indicador.formato.formatar(indicador.meta.valorDo(ano))}</td>
-            <td>${indicador.formato.formatar(indicador.pegaOuCriaReferencialComparativo(ano).valor)}</td>
+            <td>
+                <form class="total-listener">
+                    <input type="hidden" name="totalRealizado.id"
+                           value="${indicador.pegaOuCriaTotalRealizado(ano).id}"/>
+                    <input type="text" name="totalRealizado.valor"
+                           value="${indicador.pegaOuCriaTotalRealizado(ano).valor}"/>
+                </form>
+            </td>
+            <td>
+                <form class="meta-listener">
+                    <input type="hidden" name="valorAnual.id"
+                           value="${indicador.meta.metaDo(ano).id}"/>
+                    <input type="text" name="valorAnual.valor"
+                           value="${indicador.meta.metaDo(ano).valor}"/>
+                </form>
+            </td>
+            <td>
+                <form class="referencial-listener">
+                    <input type="hidden" name="referencialComparativo.id"
+                           value="${indicador.pegaOuCriaReferencialComparativo(ano).id}"/>
+                    <input type="text" name="referencialComparativo.valor"
+                           value="${indicador.pegaOuCriaReferencialComparativo(ano).valor}"/>
+                </form>
+            </td>
         </tr>
 
         #{/list}
@@ -47,11 +68,17 @@
 </div>
 
 #{set 'moreScripts'}
+  #{script 'indicadores-valores.js'/}
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('.listener').focusout(function () {
-            this.form.submit();
-        });
+    $(function () {
+        var registros = #{jsRoute @Indicadores.salvarRegistroIndicador()/};
+        var totais = #{jsRoute @Indicadores.salvarTotalRealizado()/};
+        var referenciais = #{jsRoute @Indicadores.salvarReferencialComparativo()/};
+        var metas = #{jsRoute @Metas.salvaValorAnual()/};
+        adicionaListeners(registros, '.registro-listener');
+        adicionaListeners(totais, '.total-listener');
+        adicionaListeners(referenciais, '.referencial-listener');
+        adicionaListeners(metas, '.meta-listener');
     });
 </script>
 #{/set}

@@ -42,9 +42,9 @@ public class Meta extends Model {
     return list;
   }
 
-  public double valorDo(int ano) {
+  public ValorAnual metaDo(int ano) {
     for (ValorAnual v : valoresAnuais) {
-      if (v.ano == ano) return v.valor;
+      if (v.ano == ano) return v;
     }
     throw new ValorDeMetaNaoEncontrado();
   }

@@ -5,7 +5,9 @@ import graficos.highchart.HighChartValoresIndicadorFactory;
 import graficos.highchart.HighChartValoresMetaFactory;
 import models.Perspectiva;
 import models.indicador.Indicador;
+import models.indicador.ReferencialComparativo;
 import models.indicador.RegistroIndicador;
+import models.indicador.TotalRealizado;
 import models.meta.Meta;
 import play.mvc.Controller;
 
@@ -33,9 +35,16 @@ public class Indicadores extends Controller {
     render(indicador);
   }
 
-  public static void salvarRegistroIndicador(Long id) {
-    RegistroIndicador registroIndicador = RegistroIndicador.findById(id);
-    registroIndicador.save();
+  public static void salvarRegistroIndicador(RegistroIndicador registro) {
+    registro.save();
+  }
+
+  public static void salvarTotalRealizado(TotalRealizado totalRealizado) {
+    totalRealizado.save();
+  }
+
+  public static void salvarReferencialComparativo(ReferencialComparativo referencialComparativo) {
+    referencialComparativo.save();
   }
 
   public static void visualizarJsonGraficoLinha(Long id) {
