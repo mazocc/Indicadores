@@ -31,7 +31,7 @@
                   <form class="registro-listener">
                       <input type="hidden" name="registro.id"
                              value="${indicador.pegaOuCriaRegistro(ano, mes).id}"/>
-                      <input type="text" name="registro.valor"
+                      <input class="input-valor" type="text" name="registro.valor"
                              value="${indicador.pegaOuCriaRegistro(ano, mes).valor}"/>
                   </form>
               </td>
@@ -40,7 +40,7 @@
                 <form class="total-listener">
                     <input type="hidden" name="totalRealizado.id"
                            value="${indicador.pegaOuCriaTotalRealizado(ano).id}"/>
-                    <input type="text" name="totalRealizado.valor"
+                    <input class="input-valor" type="text" name="totalRealizado.valor"
                            value="${indicador.pegaOuCriaTotalRealizado(ano).valor}"/>
                 </form>
             </td>
@@ -48,7 +48,7 @@
                 <form class="meta-listener">
                     <input type="hidden" name="valorAnual.id"
                            value="${indicador.meta.metaDo(ano).id}"/>
-                    <input type="text" name="valorAnual.valor"
+                    <input class="input-valor" type="text" name="valorAnual.valor"
                            value="${indicador.meta.metaDo(ano).valor}"/>
                 </form>
             </td>
@@ -56,7 +56,7 @@
                 <form class="referencial-listener">
                     <input type="hidden" name="referencialComparativo.id"
                            value="${indicador.pegaOuCriaReferencialComparativo(ano).id}"/>
-                    <input type="text" name="referencialComparativo.valor"
+                    <input class="input-valor" type="text" name="referencialComparativo.valor"
                            value="${indicador.pegaOuCriaReferencialComparativo(ano).valor}"/>
                 </form>
             </td>
@@ -69,8 +69,18 @@
 
 #{set 'moreScripts'}
   #{script 'indicadores-valores.js'/}
+  #{script 'jquery.numeric.js'/}
 <script type="text/javascript">
     $(function () {
+        $('.input-valor')
+                .numeric(${indicador.formato.toString() != 'Inteiro'})
+                .each(function () {
+                    if (${indicador.formato.toString() == 'Inteiro'}) {
+                        this.value = Number(this.value).toFixed(0);
+                    }
+                });
+
+
         var registros = #{jsRoute @Indicadores.salvarRegistroIndicador()/};
         var totais = #{jsRoute @Indicadores.salvarTotalRealizado()/};
         var referenciais = #{jsRoute @Indicadores.salvarReferencialComparativo()/};
